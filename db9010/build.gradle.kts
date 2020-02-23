@@ -17,7 +17,7 @@ buildscript {
     }
 }
 
-group = "com.jovial.db9010"
+group = "com.jovial"
 version = "0.1.0"
 
 repositories {
@@ -108,6 +108,8 @@ tasks {
     publishing {
         repositories {
             maven {
+            url = uri("file:///home/billf/github/zathras.github.io/maven")
+            /*  For Github Packages:
                 name = "GitHubPackages"
                 url = uri("https://maven.pkg.github.com/zathras/db9010")
                 credentials {
@@ -115,7 +117,7 @@ tasks {
                     username = File("$home/.ssh/other/github.maven.user").readText().trim()
                     password = File("$home/.ssh/other/github.maven.token").readText().trim()
                 }
-
+            */
             }
         }
         publications {
