@@ -18,7 +18,7 @@ buildscript {
 }
 
 group = "com.jovial"
-version = "0.1.0"
+version = "0.1.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -28,6 +28,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     testCompile("junit", "junit", "4.12")
+    testImplementation("com.h2database", "h2", "1.4.200")
 }
 
 configure<JavaPluginConvention> {

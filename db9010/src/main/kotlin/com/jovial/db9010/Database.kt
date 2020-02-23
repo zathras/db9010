@@ -27,7 +27,7 @@ internal val dbLogger = Logger.getLogger("com.jovial.db9010")
  * ```
  *
  */
-class Database private constructor(val connection: Connection) {
+class Database private constructor(val connection: Connection) : AutoCloseable {
 
     internal val insertStatements = StatementCache<InsertStatement.Key>("insert")
     internal val selectStatements = StatementCache<SelectQuery.Key>("select")
@@ -49,24 +49,36 @@ class Database private constructor(val connection: Connection) {
          *     }
          * ```
          */
-        fun withConnection(url: String, user: String, password: String, body: (db: Database) -> Unit) {
+        fun <T> withConnection(url: String, user: String, password: String, body: (db: Database) -> T): T {
+            return open(url, user, password).use { db -> body(db) }
+        }
+
+        /**
+         * Open a JDBC connection, and give a [Database] object representing it.
+         * See [close], or, to automatically close the Database, [withConnection].
+         */
+        fun open(url: String, user: String, password: String): Database {
             val connProperties = Properties()
             connProperties["user"] = user
             connProperties["password"] = password
 
-            DriverManager.getConnection(url, connProperties).use { connection ->
-                val db = Database(connection)
-                try {
-                    body(db)
-                } finally {
-                    for (s in db.insertStatements.values) s.close()
-                    for (s in db.selectStatements.values) s.close()
-                    for (s in db.updateStatements.values) s.close()
-                    for (s in db.deleteStatements.values) s.close()
-                    for (s in db.genericStatements.values) s.close()
-                    connection.close()
-                }
-            }
+            return Database(DriverManager.getConnection(url, connProperties))
+        }
+
+    }
+
+    /**
+     * Close the underlying JDBC connection, and free other resources, like cached statements.
+     */
+    override fun close() {
+        try {
+            for (s in insertStatements.values) s.close()
+            for (s in selectStatements.values) s.close()
+            for (s in updateStatements.values) s.close()
+            for (s in deleteStatements.values) s.close()
+            for (s in genericStatements.values) s.close()
+        } finally {
+            connection.close()
         }
     }
 

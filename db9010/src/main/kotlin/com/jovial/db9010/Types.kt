@@ -21,7 +21,6 @@ interface ValueAdapter<T> {
      */
     fun update(set: ResultSet, index: Int, value: T)
 
-
     /**
      * Get the column at [index] in [set].
      */
@@ -53,6 +52,14 @@ abstract class ValueAdapterNotNull<T>(): ValueAdapter<T> {
     }
 
     /**
+     * Get the column at [index] in [set], returning a nullable value.
+     */
+    abstract protected fun getOrNull(set: ResultSet, index: Int) : T?
+
+    override fun get(set: ResultSet, index: Int) : T =
+        getOrNull(set, index)!!
+
+    /**
      * Create a nullable version of this ValueAdapter.  For this, we need the
      * [java.sql.Types] type, which is an integer constant, because
      * [PreparedStatement.setNull] demands it.
@@ -77,7 +84,7 @@ abstract class ValueAdapterNotNull<T>(): ValueAdapter<T> {
             }
 
             override fun get(set: ResultSet, index: Int): T? {
-                val result = this@ValueAdapterNotNull.get(set, index)
+                val result = this@ValueAdapterNotNull.getOrNull(set, index)
                 if (set.wasNull()) {
                     return null
                 } else {
@@ -99,7 +106,7 @@ object Types {
             statement.setBoolean(index, value)
         override fun update(set: ResultSet, index: Int, value: Boolean) =
             set.updateBoolean(index, value)
-        override fun get(set: ResultSet, index: Int): Boolean =
+        override fun getOrNull(set: ResultSet, index: Int): Boolean? =
             set.getBoolean(index)
     }
 
@@ -111,7 +118,7 @@ object Types {
             statement.setBytes(index, value)
         override fun update(set: ResultSet, index: Int, value: ByteArray) =
             set.updateBytes(index, value)
-        override fun get(set: ResultSet, index: Int): ByteArray =
+        override fun getOrNull(set: ResultSet, index: Int): ByteArray? =
             set.getBytes(index)
     }
 
@@ -123,7 +130,7 @@ object Types {
             statement.setFloat(index, value)
         override fun update(set: ResultSet, index: Int, value: Float) =
             set.updateFloat(index, value)
-        override fun get(set: ResultSet, index: Int): Float =
+        override fun getOrNull(set: ResultSet, index: Int): Float? =
             set.getFloat(index)
     }
 
@@ -135,7 +142,7 @@ object Types {
             statement.setDouble(index, value)
         override fun update(set: ResultSet, index: Int, value: Double) =
             set.updateDouble(index, value)
-        override fun get(set: ResultSet, index: Int): Double =
+        override fun getOrNull(set: ResultSet, index: Int): Double? =
             set.getDouble(index)
     }
 
@@ -147,7 +154,7 @@ object Types {
             statement.setShort(index, value)
         override fun update(set: ResultSet, index: Int, value: Short) =
             set.updateShort(index, value)
-        override fun get(set: ResultSet, index: Int): Short =
+        override fun getOrNull(set: ResultSet, index: Int): Short? =
             set.getShort(index)
     }
 
@@ -159,7 +166,7 @@ object Types {
             statement.setInt(index, value)
         override fun update(set: ResultSet, index: Int, value: Int) =
             set.updateInt(index, value)
-        override fun get(set: ResultSet, index: Int): Int =
+        override fun getOrNull(set: ResultSet, index: Int): Int? =
             set.getInt(index)
     }
 
@@ -171,7 +178,7 @@ object Types {
             statement.setLong(index, value)
         override fun update(set: ResultSet, index: Int, value: Long) =
             set.updateLong(index, value)
-        override fun get(set: ResultSet, index: Int): Long =
+        override fun getOrNull(set: ResultSet, index: Int): Long? =
             set.getLong(index)
     }
 
@@ -183,7 +190,7 @@ object Types {
             statement.setString(index, value)
         override fun update(set: ResultSet, index: Int, value: String) =
             set.updateString(index, value)
-        override fun get(set: ResultSet, index: Int): String =
+        override fun getOrNull(set: ResultSet, index: Int): String? =
             set.getString(index)
     }
 
@@ -195,7 +202,7 @@ object Types {
             statement.setBigDecimal(index, value)
         override fun update(set: ResultSet, index: Int, value: BigDecimal) =
             set.updateBigDecimal(index, value)
-        override fun get(set: ResultSet, index: Int): BigDecimal =
+        override fun getOrNull(set: ResultSet, index: Int): BigDecimal? =
             set.getBigDecimal(index)
     }
 
@@ -208,7 +215,7 @@ object Types {
             statement.setObject(index, value)
         override fun update(set: ResultSet, index: Int, value: Any) =
             set.updateObject(index, value)
-        override fun get(set: ResultSet, index: Int): Any =
+        override fun getOrNull(set: ResultSet, index: Int): Any? =
             set.getObject(index)
 
     }
@@ -223,7 +230,7 @@ object Types {
     val sqlOther = object: ValueAdapterNotNull<Unit>() {
         override fun set(statement: PreparedStatement, index: Int, value: Unit) { }
         override fun update(set: ResultSet, index: Int, value: Unit) { }
-        override fun get(set: ResultSet, index: Int) { }
+        override fun getOrNull(set: ResultSet, index: Int) { }
     }
 }
 
