@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SelectQuery - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">SelectQuery</a><br/>
+<br/>
+<h1>SelectQuery</h1>
+<code><span class="keyword">class </span><span class="identifier">SelectQuery</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-results-holder/index.html"><span class="identifier">ResultsHolder</span></a><span class="symbol">, </span><a href="../-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></code>
+<p>An SQL select query.  See <a href="../-database/select.html">Database.select</a>.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-builder/index.html">Builder</a></h4>
+</td>
+<td>
+<p>A builder for a <a href="./index.html">SelectQuery</a>.  See <a href="../-database/select.html">Database.select</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-key/index.html">Key</a></h4>
+</td>
+<td>
+<p>Key used for caching select queries by <a href="../-database/index.html">Database</a>.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="delete.html">delete</a></h4>
+</td>
+<td>
+<p>Delete the currently selected row.  The query must have been marked as
+FOR UPDATE with <a href="-builder/for-update.html">Builder.forUpdate</a></p>
+<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="insert.html">insert</a></h4>
+</td>
+<td>
+<p>Insert a new row with the values set in <a href="insert.html#com.jovial.db9010.SelectQuery$insert(kotlin.Function0((kotlin.Unit)))/body">body</a>, using the <a href="../-table-column/index.html">TableColumn</a> setters of this query.
+The query must have been marked as FOR UPDATE with <a href="-builder/for-update.html">Builder.forUpdate</a></p>
+<code><span class="keyword">fun </span><span class="identifier">insert</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$insert(kotlin.Function0((kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="insert-from-json.html">insertFromJson</a></h4>
+</td>
+<td>
+<p>Insert a new row with the values set by <a href="insert-from-json.html#com.jovial.db9010.SelectQuery$insertFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</a>, using <a href="set-from-json.html">setFromJson</a>.
+The query must have been marked as FOR UPDATE with <a href="-builder/for-update.html">Builder.forUpdate</a>
+See also <a href="../-types/sql-object.html">Types.sqlObject</a>.</p>
+<code><span class="keyword">fun </span><span class="identifier">insertFromJson</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$insertFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="next.html">next</a></h4>
+</td>
+<td>
+<p>Move the select cursor to the next row in the query.  Gives true if there is a next row,
+false otherwise.  See <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#next()">ResultSet.next</a>.</p>
+<code><span class="keyword">fun </span><span class="identifier">next</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="next-or-fail.html">nextOrFail</a></h4>
+</td>
+<td>
+<p>Move the select cursor to the next row, or fail with an IllegalStateException if there
+is not a next row.  See <a href="next.html">next</a>.</p>
+<code><span class="keyword">fun </span><span class="identifier">nextOrFail</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="set.html">set</a></h4>
+</td>
+<td>
+<p>Update the column <a href="set.html#com.jovial.db9010.SelectQuery$set(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.set.T)), com.jovial.db9010.SelectQuery.set.T)/c">c</a> with a new value.
+The update is written to the database with <a href="update.html">update</a>.
+The query must have been marked as FOR UPDATE with <a href="-builder/for-update.html">Builder.forUpdate</a></p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$set(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.set.T)), com.jovial.db9010.SelectQuery.set.T)/c">c</span><span class="symbol">:</span>&nbsp;<a href="../-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery$set(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.set.T)), com.jovial.db9010.SelectQuery.set.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="set-from-json.html">setFromJson</a></h4>
+</td>
+<td>
+<p>Update the columns named in the JSON-friendly <a href="set-from-json.html#com.jovial.db9010.SelectQuery$setFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</a>'s keys to their
+corresponding values.  See also <a href="../-types/sql-object.html">Types.sqlObject</a>.
+The query must have been marked as FOR UPDATE with <a href="-builder/for-update.html">Builder.forUpdate</a></p>
+<code><span class="keyword">fun </span><span class="identifier">setFromJson</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="set-from-lambda.html">setFromLambda</a></h4>
+</td>
+<td>
+<p>Set the given parameter <a href="../-parameter-setter/set-from-lambda.html#com.jovial.db9010.ParameterSetter$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.ParameterSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/p">p</a>, using a code block that operates on a JDBC <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">PreparedStatement</a>
+using the provided value index.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="../-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/setter">setter</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Update the column <a href="set-from-lambda.html#com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, kotlin.Unit)))/c">c</a> with a new value, using a code body that takes
+a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a> and a column index.
+The update is written to the database with <a href="update.html">update</a>.
+The query must have been marked as FOR UPDATE with <a href="-builder/for-update.html">Builder.forUpdate</a></p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, kotlin.Unit)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="../-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="update.html">update</a></h4>
+</td>
+<td>
+<p>Update the currently selected row.  with values set by this query's <a href="../-table-column/index.html">TableColumn</a> setters.
+The query must have been marked as FOR UPDATE with <a href="-builder/for-update.html">Builder.forUpdate</a></p>
+<code><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

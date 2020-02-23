@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TableColumn - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">TableColumn</a><br/>
+<br/>
+<h1>TableColumn</h1>
+<code><span class="keyword">class </span><span class="identifier">TableColumn</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A column in a <a href="../-table/index.html">Table</a>.  The SQL type of the column is determined by
+<a href="sql-type.html">sqlType</a>, and the Kotlin type is determined by <a href="../-column/adapter.html">adapter</a>.  See <a href="../-table/index.html">Table</a></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>A column in a <a href="../-table/index.html">Table</a>.  The SQL type of the column is determined by
+<a href="sql-type.html">sqlType</a>, and the Kotlin type is determined by <a href="../-column/adapter.html">adapter</a>.  See <a href="../-table/index.html">Table</a></p>
+<code><span class="identifier">TableColumn</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/sqlName">sqlName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/sqlType">sqlType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/adapter">adapter</span><span class="symbol">:</span>&nbsp;<a href="../-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/jsonName">jsonName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;"${table.tableName}.$sqlName"<span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="qualified-name.html">qualifiedName</a></h4>
+</td>
+<td>
+<p>The name of this column, qualified by the table name if there is one.
+Gives a value like "MyTable.myColumn".</p>
+<code><span class="keyword">val </span><span class="identifier">qualifiedName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-type.html">sqlType</a></h4>
+</td>
+<td>
+<p>The SQL type of this column, like "VARCHAR(50) NOT NULL".</p>
+<code><span class="keyword">val </span><span class="identifier">sqlType</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="table.html">table</a></h4>
+</td>
+<td>
+<p>The <a href="../-table/index.html">Table</a> of which this column is a part.</p>
+<code><span class="keyword">val </span><span class="identifier">table</span><span class="symbol">: </span><a href="../-table/index.html"><span class="identifier">Table</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

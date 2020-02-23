@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GenericStatement - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">GenericStatement</a><br/>
+<br/>
+<h1>GenericStatement</h1>
+<code><span class="keyword">class </span><span class="identifier">GenericStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></code>
+<p>A generic SQL statement.  The entire statement body is set by user code.
+See <a href="../-database/statement.html">Database.statement</a>.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-builder/index.html">Builder</a></h4>
+</td>
+<td>
+<p>A builder for a generic statement.  See <a href="../-database/statement.html">Database.statement</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-key/index.html">Key</a></h4>
+</td>
+<td>
+<p>A key used by <a href="../-database/index.html">Database</a> for caching generic statements.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="result-handler.html">resultHandler</a></h4>
+</td>
+<td>
+<p>Handler that is called after executing the PreparedStatement.  The first argument
+is the return value of PreparedStatement.execute().  Client code can set this to a
+different value in order to obtain the <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">PreparedStatement</a> and the return value
+of <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#execute()">PreparedStatement.execute</a> after it is called by <a href="-builder/run.html">Builder.run</a>.</p>
+<code><span class="keyword">var </span><span class="identifier">resultHandler</span><span class="symbol">: </span><span class="symbol">(</span><span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

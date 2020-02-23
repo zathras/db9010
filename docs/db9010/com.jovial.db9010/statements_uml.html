@@ -1,0 +1,87 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Statements</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<h2>Statements</h2>
+<p><img src="../statements.svg">
+<p><img src="../transparent_pixel.png" height="1px" width="100%">
+<p>
+When the client code is finished using a <code>Builder</code>, it calls
+<code>run(lambda)</code> on the builder to run the statement.  This tells
+the builder to build the statement, prepare it, and then call the body
+of the lambda.
+With the exception of <code>InsertStatement</code>, statements take
+values for their <code>Parameter</code>s.  Client code does this with
+the <code>ParameterSetter.set(Parameter, T)</code> method.  When the 
+client code is finished setting parameters, the statement is then 
+executed.  For all but the <code>SelectQuery</code>, this happens 
+when the user's code block finishes.
+<p>
+In the case of the <code>SelectQuery</code>, executing the statement is
+triggered by asking for the first results, with <code>next()</code>, or,
+when the client is certain there will be a result row, 
+<code>nextOrFail()</code>.  Once that is done, it is illegal to continue
+to set parameters, and an attempt to do so generates an
+<code>IllegalStateException</code>.  After the query is run, it becomes
+legal to get table values, using <code>get(TableColumn)</code>.  If the
+select statement is <code>forUpdate()</code>, row values can be set
+with <code>set(TableColumn, T)</code> method, and the updates can
+be written to the database with <code>update()</code>.
+<p>
+<code>InsertStatement</code> and <code>UpdateStatement</code> objects'
+builders take a code block that's used to establish which columns appear
+in the statment, and to provide them values.  Both builders have a
+method called 
+</code>run</code>. When it completes, the statement is built,
+prepared and executed.  
+
+<code>InsertStatement</code> offers a different alternative, however.
+An insert statement can produce a <code>ResultSet</code>, containing
+the value(s) of the primary key/keys.  For this reason, there are two
+variants of the 
+<a href="main_uml.html"><code>Database</code></a>
+method <code>insertInto</code>:
+<pre>
+    db.insertInto(MyTable) <strong>run</strong> { row -> 
+        row[MyTable.myStringColumn] = "x" 
+        row[MyTable.myIntColumn] = 42
+   }
+</pre>
+and
+<pre>
+
+    val id : Int = db.insertInto(MyTable) { row -> 
+        row[MyTable.myStringColumn] = "x" 
+        row[MyTable.myIntColumn] = 42
+    } <strong>run</strong> { result -> 
+        row[MyTable.thePrimaryKey]
+    }
+</pre>
+<p>
+In the first variant, the <code>Database.insertInto(Table)</code>
+method actually produces an <code>InsertStatement.BuilderNoResults</code>,
+so named because the client code isn't asking for results.  Then,
+the user invokes the infix <code>run</code> method with a body to
+set the rows.  The <code>BuilderNoResults</code> internally creates a
+<code>Builder</code>, and provides that builder with a body
+that discards the results.
+<p>
+In the second variant, the client is invoking the method
+<code>Database.insertInto(Table, lambda)</code> method.  This
+directly creates an <code>InsertStatement.Builder</code>, which
+has a <code>run</code> method.  This builder's <code>run</code> method is
+executed <i>after</i> the insert statement is run, and is given an
+<code>InsertStatement.Result</code> object wrapping 
+the <code>ResultSet</code>, so that the client can query for the
+values of the primary key(s).
+<p>
+This implementation of <code>InsertStatement</code> is a little
+subtle, but it's hopefully intuitive for clients.  The rule is simple:
+With all statments, you <strong>always</strong> call the infix
+</code>run</code> method.  It's just that with insert statement, you can
+call <code>run</code> after the code block that sets the values, so you can
+provide a second code block to get the results of the insert.
+</body></html>

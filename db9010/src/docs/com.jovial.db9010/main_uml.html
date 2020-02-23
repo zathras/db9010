@@ -1,0 +1,45 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Database Entry Point</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<h2>Database Entry Point</h2>
+<p><img src="../main.svg">
+<p><img src="../transparent_pixel.png" height="1px" width="100%">
+<p>
+The <code>Database</code> class first lets you establish a connection
+to a JDBC driver.  It then provides support to create and drop tables, 
+and create various kinds of statements.  It also manages statement
+caches, so each unique statement need only be prepared once.  A typical
+usage is shown in the <a href="../index.html">introductions</a>:
+<pre>
+        db.select(People.columns).from(People) + 
+                "WHERE " + People.name + " &lt;> " + param run { query ->
+            ...
+        }
+</pre>
+The call to <code>db.select(...)</code> yields an instance of
+<code>SelectQuery.Builder</code>.  This object has a 
+<code>From(Table)</code> method that returns the same builder.
+The builder also defines the <code>+</code> operator for appropriate
+types, allowing a full statement to be build up.  Finally, the
+infix <code>run</code> operator is applied to the builder.
+<p>
+The <code>run</code> operator takes a lambda that accepts a
+<code>SelectQuery</code>.  See the 
+<a href="statements_uml.html">statements description</a> for what happens next.
+<p>
+The other statement types work similarly.  There are some differences, though.
+For example, an <code>INSERT</code> statement never has a <code>WHERE</code>
+clause, or other functionality that would require it to accept text or
+parameters.
+<code>Update</code> is a little special, in that each column sent to the
+</code>Builder</code> will result in a value that needs to be provided
+in the 
+<a href="statements_uml.html">next step</a>; 
+for the other statement types, it is only
+<code>Parameter</code> objects that generate a need to supply a value.
+
+</body></html>

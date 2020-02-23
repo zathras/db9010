@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>20</y>
+      <w>390</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Database
+--
+connection : Connection
+insertStatements : StatementCache
+selectStatements : StatementCache
+updateStatements : StatementCache
+deleteStatements : StatementCache
+genericStatements : StatementCache
+--
+_withConnection(url, lambda)_
+transaction(lambda)
+createTable(Table)
+dropTable(Table)
+insertInto(Table, ...) : InsertStatement.Builder
+select(columns) : SelectQuery.Builder
+update(Table) : UpdateStatement:Builder
+deleteFrom(Table) : DeleteStatement.Builder
+statement() : GenericStatement.Builder
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>520</y>
+      <w>230</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>InsertStatement.Builder
+--
+setter : InsertStatement
+--
+statementKey
+prepareStatement()
+run((InsertStatement) -&gt; T) : T</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>710</y>
+      <w>200</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>SelectQuery.Builder
+--
+forUpdate: Boolean
+tables: List&lt;Table&gt;
+--
+statementKey
+prepareStatement()
+from(List&lt;Table&gt;)
+run((SelectQuery) -&gt; T) : T</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>880</y>
+      <w>240</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>UpdateStatement.Builder
+--
+setter : UpdateStatement
+--
+statementKey
+prepareStatement()
+run((UpdateStatement -&gt; T) : T)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>870</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>DeleteStatement.Builder
+--
+parameterSetters
+--
+statementKey
+prepareStatement()
+&lt;T&gt; set(Parameter, T)
+run((DeleteStatement) -&gt; T) : T
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>350</y>
+      <w>310</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>/StatementBuilder&lt;K&gt;/
+--
+doCache : Boolean
+--
+doNotCache()
+/statementKey : K/
+/prepareStatement() : PreparedStatement/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>510</y>
+      <w>320</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>/TextStatementBuilder&lt;K&gt;/
+--
+textBuilder : StringBuilder
+parameters: MutableList&lt;Parameter&lt;*&gt; &gt;
+--
++(Parameter&lt;*&gt;)
++(String)
++(Table)
++(Column&lt;*&gt;)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>440</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>440</y>
+      <w>270</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;250.0;40.0;250.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>640</y>
+      <w>60</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;40.0;40.0;40.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>640</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;130.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>640</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;180.0;40.0;180.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>290</y>
+      <w>100</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+creates v</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>710</y>
+      <w>240</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>GenericStatement.Builder
+--
+setter : GenericStatement
+--
+statementKey
+prepareStatement()
+run((GenericStatement -&gt; Unit)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>640</y>
+      <w>310</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;40.0;40.0;40.0;200.0;290.0;200.0;290.0;240.0</additional_attributes>
+  </element>
+</diagram>

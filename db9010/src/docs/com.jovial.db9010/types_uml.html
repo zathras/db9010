@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Types</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<h2>Table and Type Definitions</h2>
+<p><img src="../types.svg">
+<p><img src="../transparent_pixel.png" height="1px" width="100%">
+<p>
+The biggest challenge in describing SQL types is managing the 
+translation between them Kotlin's types.  The classes
+above are used to describe SQL structures, and conveniently manage
+that translation.  Consider, for example, the SQL behind the 
+<code>SELECT</code> statement in the <a href="../index.html">introduction</a>:
+<pre>
+    SELECT People.id, People.name, People.worried FROM People WHERE People.name &lt;&gt; ?
+</pre>
+Here we have three columns, represented in Kotlin as an <code>Int</code>, 
+a <code>String</code> and a <code>Boolean</code>.  Further, we have 
+a parameter to the statement, a <code>String</code>.
+Each column of the table is represented by a <code>TableColumn</code>
+with an appropriate <code>ValueAdapter</code>.  The parameter is
+represented by a <code>Parameter</code> object, which can be used to
+index into the statement to set the parameter value.  The 
+<code>Parameter</code> also has a <code>ValueAdapter</code>
+<p>
+The <code>TableColumn</code> instances are collected together in a
+</code>Table</code>.  This provides some other features, like a
+list of all the table's columns, and a feature to automatically
+generate the <code>CREATE TABLE</code> statement.  
+<p>
+There are no restrictions on where <code>QueryColumn</code> and
+<code>Parameter</code> instance need to be stored.  After all,
+a SQL expression like "SELECT COUNT(*)" or "?" isn't really tied
+to anything.  However, it might be convenient to collect some
+of these objects in singletons.  This is done in the demo code,
+in <code>BiggerDemo.kt</code>.
+</body></html>

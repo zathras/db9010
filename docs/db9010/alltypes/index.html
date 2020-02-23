@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>alltypes - db9010</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<p><img src="90_10_rule.jpg" style="display: block; float: right"></p>
+<h3>All Types</h3>
+<table>
+<tbody>
+<tr>
+<h5><a href="../com.jovial.db9010/-column/index.html">com.jovial.db9010.Column</a></h5>
+<p>A column in a select statement.  This can be either a <a href="../com.jovial.db9010/-table-column/index.html">TableColumn</a> or a
+<a href="../com.jovial.db9010/-query-column/index.html">QueryColumn</a>.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-column-setter/index.html">com.jovial.db9010.ColumnSetter</a></h5>
+<p>Superclass for statements that can set table columns:  <a href="../com.jovial.db9010/-update-statement/index.html">UpdateStatement</a> and
+<a href="../com.jovial.db9010/-insert-statement/index.html">InsertStatement</a>.  This class maintains a list of the columns that have been
+set, and a code block to set each value.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-database/index.html">com.jovial.db9010.Database</a></h5>
+<p>Represents a database that we connect to using JDBC.  This is the main
+entry point in this library for operations on a database.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-delete-statement/index.html">com.jovial.db9010.DeleteStatement</a></h5>
+<p>An SQL delete statement.  See <a href="../com.jovial.db9010/-database/delete-from.html">Database.deleteFrom</a>.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-generic-statement/index.html">com.jovial.db9010.GenericStatement</a></h5>
+<p>A generic SQL statement.  The entire statement body is set by user code.
+See <a href="../com.jovial.db9010/-database/statement.html">Database.statement</a>.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-insert-statement/index.html">com.jovial.db9010.InsertStatement</a></h5>
+<p>An SQL insert statement.  See <a href="../com.jovial.db9010/-database/insert-into.html">Database.insertInto</a>.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-parameter/index.html">com.jovial.db9010.Parameter</a></h5>
+<p>A parameter to an SQL statement.  Parameters are represented as "?" in the text
+of a SQL statement.  Before executing a statement, they can be set, using
+<a href="../com.jovial.db9010/-parameter-setter/set.html">ParameterSetter.set</a>, which sets one the underlying <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">java.sql.PreparedStatement</a>'s parameter
+values.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-parameter-setter/index.html">com.jovial.db9010.ParameterSetter</a></h5>
+<p>Type for statements that can set parameters:  <a href="../com.jovial.db9010/-delete-statement/index.html">DeleteStatement</a>, <a href="../com.jovial.db9010/-update-statement/index.html">UpdateStatement</a>,
+<a href="../com.jovial.db9010/-select-query/index.html">SelectQuery</a> and <a href="../com.jovial.db9010/-generic-statement/index.html">GenericStatement</a>.  This class maintains a map of the parameters
+that have been set to code blocks that set the parameters on a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">PreparedStatement</a>, given
+the value index.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-query-column/index.html">com.jovial.db9010.QueryColumn</a></h5>
+<p>A query column with a SQL expression, like "COUNT(*)".  <a href="../com.jovial.db9010/-query-column/index.html">QueryColumn</a> values
+are read-only, and query columns cannot appear in a <a href="../com.jovial.db9010/-select-query/index.html">SelectQuery</a> marked as
+for update.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-results-holder/index.html">com.jovial.db9010.ResultsHolder</a></h5>
+<p>Abstract superclass for objects that hold a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a>:  <a href="../com.jovial.db9010/-select-query/index.html">SelectQuery</a> and <a href="../com.jovial.db9010/-insert-statement/-result/index.html">InsertStatement.Result</a>.
+This class maintains a map that is used to look up a desired <a href="../com.jovial.db9010/-column/index.html">Column</a>, and find it in
+a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a>.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-select-query/index.html">com.jovial.db9010.SelectQuery</a></h5>
+<p>An SQL select query.  See <a href="../com.jovial.db9010/-database/select.html">Database.select</a>.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-statement-builder/index.html">com.jovial.db9010.StatementBuilder</a></h5>
+<p>Abstract superclass for the builder of all statement types.
+See also <a href="../com.jovial.db9010/do-not-cache.html">StatementBuilder.doNotCache</a></p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-table/index.html">com.jovial.db9010.Table</a></h5>
+<p>Base class for Table definitions.  A table is defined by making a singleton object
+that implements this type, with <a href="../com.jovial.db9010/-table-column/index.html">TableColumn</a> members.  Columns register themselves
+with their table, which is the first parameter to their constructor.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-table-column/index.html">com.jovial.db9010.TableColumn</a></h5>
+<p>A column in a <a href="../com.jovial.db9010/-table/index.html">Table</a>.  The SQL type of the column is determined by
+<a href="../com.jovial.db9010/-table-column/sql-type.html">sqlType</a>, and the Kotlin type is determined by <a href="../com.jovial.db9010/-column/adapter.html">adapter</a>.  See <a href="../com.jovial.db9010/-table/index.html">Table</a></p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-text-statement-builder/index.html">com.jovial.db9010.TextStatementBuilder</a></h5>
+<p>Superclass for the builder of all statements that can have SQL strings
+added to the statement body.  See <a href="../com.jovial.db9010/plus.html">TextStatementBuilder.plus</a>.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-types/index.html">com.jovial.db9010.Types</a></h5>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-update-statement/index.html">com.jovial.db9010.UpdateStatement</a></h5>
+<p>An SQL update statement.  See <a href="../com.jovial.db9010/-database/update.html">Database.update</a>.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-value-adapter/index.html">com.jovial.db9010.ValueAdapter</a></h5>
+<p>Interface describing an object that is used to adapt a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">PreparedStatement</a> or a
+<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a> by getting/setting a value of the appropriate type.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-value-adapter-not-null/index.html">com.jovial.db9010.ValueAdapterNotNull</a></h5>
+<p>Abstract superclass for all value adapters of non-nullable types.  This
+provides an implementation of a method that creates a value adapter of the
+corresponding nullable type.</p>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

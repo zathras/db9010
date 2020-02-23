@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Table.<init> - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="index.html">Table</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="com.jovial.db9010.Table$&lt;init&gt;(kotlin.String)"></a>
+<code><span class="identifier">Table</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Table$<init>(kotlin.String)/tableName">tableName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code>
+<p>Base class for Table definitions.  A table is defined by making a singleton object
+that implements this type, with <a href="../-table-column/index.html">TableColumn</a> members.  Columns register themselves
+with their table, which is the first parameter to their constructor.</p>
+<p>Usage example:</p>
+<pre><code>    object People : Table("People") {
+        val id = TableColumn(this, "id", "INT AUTO_INCREMENT", Types.sqlInt)
+        val name = TableColumn(this, "name", "VARCHAR(50) NOT NULL", Types.sqlString)
+        val worried = TableColumn(this, "worried", "BOOLEAN", Types.sqlBoolean)
+
+        override val primaryKeys = listOf(id)
+    }
+</code></pre>
+</BODY>
+</HTML>

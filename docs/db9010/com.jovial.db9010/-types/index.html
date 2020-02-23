@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Types - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">Types</a><br/>
+<br/>
+<h1>Types</h1>
+<code><span class="keyword">object </span><span class="identifier">Types</span></code>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="sql-big-decimal.html">sqlBigDecimal</a></h4>
+</td>
+<td>
+<p>Adapter for a column that holds a SQL type represented as a BigDecimal in Kotlin</p>
+<code><span class="keyword">val </span><span class="identifier">sqlBigDecimal</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html"><span class="identifier">BigDecimal</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-boolean.html">sqlBoolean</a></h4>
+</td>
+<td>
+<p>Adapter for a column that holds a SQL type represented as a Bool in Kotlin</p>
+<code><span class="keyword">val </span><span class="identifier">sqlBoolean</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-bytes.html">sqlBytes</a></h4>
+</td>
+<td>
+<p>Adapter for a column that holds a SQL type represented as a byte[] in Kotlin</p>
+<code><span class="keyword">val </span><span class="identifier">sqlBytes</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-double.html">sqlDouble</a></h4>
+</td>
+<td>
+<p>Adapter for a column that holds a SQL type represented as a Double in Kotlin</p>
+<code><span class="keyword">val </span><span class="identifier">sqlDouble</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-float.html">sqlFloat</a></h4>
+</td>
+<td>
+<p>Adapter for a column that holds a SQL type represented as a Float in Kotlin</p>
+<code><span class="keyword">val </span><span class="identifier">sqlFloat</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-int.html">sqlInt</a></h4>
+</td>
+<td>
+<p>Adapter for a column that holds a SQL type represented as an Int in Kotlin</p>
+<code><span class="keyword">val </span><span class="identifier">sqlInt</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-long.html">sqlLong</a></h4>
+</td>
+<td>
+<p>Adapter for a column that holds a SQL type represented as a Long in Kotlin</p>
+<code><span class="keyword">val </span><span class="identifier">sqlLong</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-object.html">sqlObject</a></h4>
+</td>
+<td>
+<p>A column type that uses JDBC's set/get/updateObject methods.  How well this works
+might depend on the driver</p>
+<code><span class="keyword">val </span><span class="identifier">sqlObject</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-other.html">sqlOther</a></h4>
+</td>
+<td>
+<p>A column type, if you want to just access the underlying JDBC structures directly.
+This might be useful for more exotic JDBC types, like the stream types that take
+a length, or the date/time types that take a Calendar.  In those cases, you call
+the get/set JDBC methods directly, using an index you look up by field in a map
+provided by this library.</p>
+<code><span class="keyword">val </span><span class="identifier">sqlOther</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-short.html">sqlShort</a></h4>
+</td>
+<td>
+<p>Adapter for a column that holds a SQL type represented as a Double in Kotlin</p>
+<code><span class="keyword">val </span><span class="identifier">sqlShort</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/index.html"><span class="identifier">Short</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sql-string.html">sqlString</a></h4>
+</td>
+<td>
+<p>Adapter for a column that holds a SQL type represented as a String in Kotlin</p>
+<code><span class="keyword">val </span><span class="identifier">sqlString</span><span class="symbol">: </span><a href="../-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

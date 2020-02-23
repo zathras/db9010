@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Database.insertInto - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="index.html">Database</a>&nbsp;/&nbsp;<a href="./insert-into.html">insertInto</a><br/>
+<br/>
+<h1>insertInto</h1>
+<a name="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">insertInto</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../-insert-statement/index.html"><span class="identifier">InsertStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code>
+<p>Run an insert statement, and collect results, i.e. the values of primary key column(s).
+For example:</p>
+<pre><code>    val db : Database = ...
+    pragueId = db.insertInto(this)  { row -&gt;
+        row[name] = "Prague"
+    } run { r -&gt; r[id] }    // r[id] is assigned to pragueId
+</code></pre>
+<p>See <a href="../-insert-statement/-builder/index.html">InsertStatement.Builder</a> for parameters and arguments that can be set.  The
+statement is run with <a href="../-insert-statement/-builder/run.html">InsertStatement.Builder.run</a>.</p>
+<a name="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table)"></a>
+<code><span class="keyword">fun </span><span class="identifier">insertInto</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNoResults</span></code>
+<p>Run an insert statement, but ignore any results, e.g. the values of primary keys.
+For example:</p>
+<pre><code>    val db : Database = ...
+    db.insertInto(People) run { row -&gt;
+        row[People.name] = "Alfred E. Neuman"
+        row[People.worried] = false
+     }
+</code></pre>
+<p>See <a href="../-insert-statement/-builder-no-results/index.html">InsertStatement.BuilderNoResults</a> for parameters and arguments that can be set.
+The statement is run with <a href="../-insert-statement/-builder-no-results/run.html">InsertStatement.BuilderNoResults.run</a></p>
+</BODY>
+</HTML>

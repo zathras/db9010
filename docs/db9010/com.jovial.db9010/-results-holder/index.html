@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResultsHolder - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">ResultsHolder</a><br/>
+<br/>
+<h1>ResultsHolder</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ResultsHolder</span></code>
+<p>Abstract superclass for objects that hold a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a>:  <a href="../-select-query/index.html">SelectQuery</a> and <a href="../-insert-statement/-result/index.html">InsertStatement.Result</a>.
+This class maintains a map that is used to look up a desired <a href="../-column/index.html">Column</a>, and find it in
+a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a>.</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="column-index.html">columnIndex</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">columnIndex</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="../-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="columns.html">columns</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">columns</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="get.html">get</a></h4>
+</td>
+<td>
+<p>Get the value from column <a href="get.html#com.jovial.db9010.ResultsHolder$get(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.get.T)))/c">c</a>, as the type determined by <a href="../-column/adapter.html">Column.adapter</a>]</p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ResultsHolder$get(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.get.T)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="../-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-from-lambda.html">getFromLambda</a></h4>
+</td>
+<td>
+<p>Get the vaule from column <a href="get-from-lambda.html#com.jovial.db9010.ResultsHolder$getFromLambda(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.getFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ResultsHolder.getFromLambda.T)))/c">c</a>, as returned by <a href="get-from-lambda.html#com.jovial.db9010.ResultsHolder$getFromLambda(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.getFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ResultsHolder.getFromLambda.T)))/body">body</a>, which takes a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a> and
+a column index.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">getFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ResultsHolder$getFromLambda(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.getFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ResultsHolder.getFromLambda.T)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="../-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ResultsHolder$getFromLambda(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.getFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ResultsHolder.getFromLambda.T)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-json.html">getJson</a></h4>
+</td>
+<td>
+<p>Get a JSON-friendly map of column names to column values.  The values are obtained
+from <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getObject(int)">ResultSet.getObject</a>.  See also <a href="../-types/sql-object.html">Types.sqlObject</a>.</p>
+<code><span class="keyword">fun </span><span class="identifier">getJson</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-select-query/index.html">SelectQuery</a></h4>
+</td>
+<td>
+<p>An SQL select query.  See <a href="../-database/select.html">Database.select</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">SelectQuery</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ResultsHolder</span></a><span class="symbol">, </span><a href="../-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

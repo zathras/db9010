@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StatementBuilder - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">StatementBuilder</a><br/>
+<br/>
+<h1>StatementBuilder</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">StatementBuilder</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span></code>
+<p>Abstract superclass for the builder of all statement types.
+See also <a href="../do-not-cache.html">StatementBuilder.doNotCache</a></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>Abstract superclass for the builder of all statement types.
+See also <a href="../do-not-cache.html">StatementBuilder.doNotCache</a></p>
+<code><span class="identifier">StatementBuilder</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../do-not-cache.html">doNotCache</a></h4>
+</td>
+<td>
+<p>Method to set this builder so that it creates a statement that is not cached
+by the <a href="../-database/index.html">Database</a> object.  By default, statements are cached.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">StatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">doNotCache</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-text-statement-builder/index.html">TextStatementBuilder</a></h4>
+</td>
+<td>
+<p>Superclass for the builder of all statements that can have SQL strings
+added to the statement body.  See <a href="../plus.html">TextStatementBuilder.plus</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">TextStatementBuilder</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">StatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

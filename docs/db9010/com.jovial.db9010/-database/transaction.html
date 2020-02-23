@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Database.transaction - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="index.html">Database</a>&nbsp;/&nbsp;<a href="./transaction.html">transaction</a><br/>
+<br/>
+<h1>transaction</h1>
+<a name="com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">transaction</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/maxRetries">maxRetries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0<span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Execute the code body within a JDBC transaction.  The transaction is committed
+when the code body completes.  Set <a href="transaction.html#com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/maxRetries">maxRetries</a> to attempt the code body multiple
+times, if an exception is thrown in <a href="transaction.html#com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/body">body</a> or while committing.</p>
+</BODY>
+</HTML>

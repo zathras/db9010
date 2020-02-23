@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Table - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">Table</a><br/>
+<br/>
+<h1>Table</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Table</span></code>
+<p>Base class for Table definitions.  A table is defined by making a singleton object
+that implements this type, with <a href="../-table-column/index.html">TableColumn</a> members.  Columns register themselves
+with their table, which is the first parameter to their constructor.</p>
+<p>Usage example:</p>
+<pre><code>    object People : Table("People") {
+        val id = TableColumn(this, "id", "INT AUTO_INCREMENT", Types.sqlInt)
+        val name = TableColumn(this, "name", "VARCHAR(50) NOT NULL", Types.sqlString)
+        val worried = TableColumn(this, "worried", "BOOLEAN", Types.sqlBoolean)
+
+        override val primaryKeys = listOf(id)
+    }
+</code></pre>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>Base class for Table definitions.  A table is defined by making a singleton object
+that implements this type, with <a href="../-table-column/index.html">TableColumn</a> members.  Columns register themselves
+with their table, which is the first parameter to their constructor.</p>
+<code><span class="identifier">Table</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Table$<init>(kotlin.String)/tableName">tableName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="columns.html">columns</a></h4>
+</td>
+<td>
+<p>The columns that make up this table.</p>
+<code><span class="keyword">val </span><span class="identifier">columns</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="constraints-sql.html">constraintsSql</a></h4>
+</td>
+<td>
+<p>A string value put at the end of the CREATE TABLE statement,
+typically to define constraints, like foreign keys.  For example, the demo
+program has a table that overrides this to be
+<code>FOREIGN KEY (city_id) REFERENCES Cities(id) ON DELETE RESTRICT ON UPDATE RESTRICT</code>.</p>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">constraintsSql</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="primary-keys.html">primaryKeys</a></h4>
+</td>
+<td>
+<p>The primary key(s) of this table.  If specified, the CREATE TABLE will
+include a PRIMARY KEY section, which has the effect of automatically
+creating an index.  See also <a href="../-insert-statement/-builder/index.html">InsertStatement.Builder</a> for the variant of
+insert statements that allows code to get the value of the primary key columns.</p>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">primaryKeys</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="table-name.html">tableName</a></h4>
+</td>
+<td>
+<p>This table's name.  Used for the CREATE TABLE and DROP TABLE statements.</p>
+<code><span class="keyword">val </span><span class="identifier">tableName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

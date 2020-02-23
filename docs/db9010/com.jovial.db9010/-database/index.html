@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Database - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">Database</a><br/>
+<br/>
+<h1>Database</h1>
+<code><span class="keyword">class </span><span class="identifier">Database</span></code>
+<p>Represents a database that we connect to using JDBC.  This is the main
+entry point in this library for operations on a database.</p>
+<p>Usage example:</p>
+<pre><code>    Database.withConnection("jdbc:h2:mem:test", "root", "") { db -&gt;
+        various operations on db
+    }
+</code></pre>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="connection.html">connection</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">connection</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html"><span class="identifier">Connection</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="create-table.html">createTable</a></h4>
+</td>
+<td>
+<p>Execute a SQL CREATE TABLE statement for <a href="create-table.html#com.jovial.db9010.Database$createTable(com.jovial.db9010.Table, kotlin.Boolean)/table">table</a>.  Include SQL
+"IF NOT EXISTS" if <a href="create-table.html#com.jovial.db9010.Database$createTable(com.jovial.db9010.Table, kotlin.Boolean)/ifNotExists">ifNotExists</a> is set true.  The CREATE TABLE
+statement is not cached.</p>
+<code><span class="keyword">fun </span><span class="identifier">createTable</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$createTable(com.jovial.db9010.Table, kotlin.Boolean)/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$createTable(com.jovial.db9010.Table, kotlin.Boolean)/ifNotExists">ifNotExists</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="delete-from.html">deleteFrom</a></h4>
+</td>
+<td>
+<p>Run a DELETE FROM statement for the given table.  See <a href="../-delete-statement/-builder/index.html">DeleteStatement.Builder</a> for
+setting additional arguments and parameters.  The statement is run after the code
+body sent to <a href="../-delete-statement/-builder/run.html">DeleteStatement.Builder.run</a> completes.</p>
+<code><span class="keyword">fun </span><span class="identifier">deleteFrom</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$deleteFrom(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="drop-table.html">dropTable</a></h4>
+</td>
+<td>
+<p>Execute a SQL DROP TABLE statement for <a href="drop-table.html#com.jovial.db9010.Database$dropTable(com.jovial.db9010.Table, kotlin.Boolean)/table">table</a>.  Include SQL
+"IF EXISTS" if <a href="drop-table.html#com.jovial.db9010.Database$dropTable(com.jovial.db9010.Table, kotlin.Boolean)/ifExists">ifExists</a> is set true.  The DROP TABLE
+statement is not cached.</p>
+<code><span class="keyword">fun </span><span class="identifier">dropTable</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$dropTable(com.jovial.db9010.Table, kotlin.Boolean)/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$dropTable(com.jovial.db9010.Table, kotlin.Boolean)/ifExists">ifExists</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="insert-into.html">insertInto</a></h4>
+</td>
+<td>
+<p>Run an insert statement, and collect results, i.e. the values of primary key column(s).
+For example:</p>
+<code><span class="keyword">fun </span><span class="identifier">insertInto</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../-insert-statement/index.html"><span class="identifier">InsertStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code>
+<p>Run an insert statement, but ignore any results, e.g. the values of primary keys.
+For example:</p>
+<code><span class="keyword">fun </span><span class="identifier">insertInto</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNoResults</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="select.html">select</a></h4>
+</td>
+<td>
+<p>Run a SELECT statement over the given columns.  See
+<a href="../-select-query/-builder/index.html">SelectQuery.Builder</a> for parameters and arguments that can be
+set.  The query is run within the code block given to
+<a href="../-select-query/-builder/run.html">SelectQuery.Builder.run</a> when that code executes <a href="../-select-query/next.html">SelectQuery.next</a>.</p>
+<code><span class="keyword">fun </span><span class="identifier">select</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$select(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">select</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="com.jovial.db9010.Database$select(kotlin.Array((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="../-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="statement.html">statement</a></h4>
+</td>
+<td>
+<p>Run a generic SQL statement.  See <a href="../-generic-statement/-builder/index.html">GenericStatement.Builder</a> for setting
+arguments and parameters, including the statement text.A</p>
+<code><span class="keyword">fun </span><span class="identifier">statement</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="transaction.html">transaction</a></h4>
+</td>
+<td>
+<p>Execute the code body within a JDBC transaction.  The transaction is committed
+when the code body completes.  Set <a href="transaction.html#com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/maxRetries">maxRetries</a> to attempt the code body multiple
+times, if an exception is thrown in <a href="transaction.html#com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/body">body</a> or while committing.</p>
+<code><span class="keyword">fun </span><span class="identifier">transaction</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/maxRetries">maxRetries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0<span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="update.html">update</a></h4>
+</td>
+<td>
+<p>Run an UPDATE statement on the given table.  Rows to be updated are identified
+with calls to <a href="../-parameter-setter/set.html">ParameterSetter.set</a> within the code body passed to
+<a href="../-update-statement/-builder/run.html">UpdateStatement.Builder.run</a>.</p>
+<code><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$update(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="with-connection.html">withConnection</a></h4>
+</td>
+<td>
+<p>Execute a body of code with a new JDBC connection that is held within a <code>Database</code> instance.
+If the client code makes that <code>Database</code> instance available to other threads, it is
+the client's responsibility do do any needed synchronization.  When the code body exits,
+the connection is closed, and the <code>Database</code> instance is no longer usable.</p>
+<code><span class="keyword">fun </span><span class="identifier">withConnection</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/url">url</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/user">user</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">db</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Database</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

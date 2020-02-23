@@ -1,0 +1,979 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="index.html"><span class="identifier">db9010</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="alltypes/index.html"><span class="identifier">alltypes</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Column</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/-init-.html"><span class="identifier">Column</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Column$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.Column.T)), kotlin.String)/sqlName">sqlName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Column$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.Column.T)), kotlin.String)/adapter">adapter</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Column$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.Column.T)), kotlin.String)/jsonName">jsonName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/adapter.html"><span class="keyword">val </span><span class="identifier">adapter</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/json-name.html"><span class="keyword">val </span><span class="identifier">jsonName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/qualified-name.html"><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">qualifiedName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/sql-name.html"><span class="keyword">val </span><span class="identifier">sqlName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/to-string.html"><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column-setter/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ColumnSetter</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column-setter/-init-.html"><span class="identifier">ColumnSetter</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$<init>(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column-setter/set.html"><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$set(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.set.T)), com.jovial.db9010.ColumnSetter.set.T)/column">column</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ColumnSetter$set(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.set.T)), com.jovial.db9010.ColumnSetter.set.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column-setter/set-from-json.html"><span class="keyword">fun </span><span class="identifier">setFromJson</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$setFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column-setter/set-from-lambda.html"><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ColumnSetter$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/setter">setter</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/index.html"><span class="keyword">class </span><span class="identifier">Database</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/connection.html"><span class="keyword">val </span><span class="identifier">connection</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html"><span class="identifier">Connection</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/create-table.html"><span class="keyword">fun </span><span class="identifier">createTable</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$createTable(com.jovial.db9010.Table, kotlin.Boolean)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$createTable(com.jovial.db9010.Table, kotlin.Boolean)/ifNotExists">ifNotExists</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/delete-from.html"><span class="keyword">fun </span><span class="identifier">deleteFrom</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$deleteFrom(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/drop-table.html"><span class="keyword">fun </span><span class="identifier">dropTable</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$dropTable(com.jovial.db9010.Table, kotlin.Boolean)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$dropTable(com.jovial.db9010.Table, kotlin.Boolean)/ifExists">ifExists</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/insert-into.html"><span class="keyword">fun </span><span class="identifier">insertInto</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-insert-statement/index.html"><span class="identifier">InsertStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/insert-into.html"><span class="keyword">fun </span><span class="identifier">insertInto</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNoResults</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/select.html"><span class="keyword">fun </span><span class="identifier">select</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$select(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/select.html"><span class="keyword">fun </span><span class="identifier">select</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="com.jovial.db9010.Database$select(kotlin.Array((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/statement.html"><span class="keyword">fun </span><span class="identifier">statement</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/transaction.html"><span class="keyword">fun </span><span class="identifier">transaction</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/maxRetries">maxRetries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0<span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/update.html"><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$update(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/with-connection.html"><span class="keyword">fun </span><span class="identifier">withConnection</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/url">url</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/user">user</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/index.html"><span class="keyword">class </span><span class="identifier">DeleteStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/index.html"><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$run(kotlin.Function1((com.jovial.db9010.DeleteStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-delete-statement/index.html"><span class="identifier">DeleteStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-key/index.html"><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-key/-init-.html"><span class="identifier">Key</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Key$<init>(com.jovial.db9010.Table, kotlin.String)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Key$<init>(com.jovial.db9010.Table, kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/index.html"><span class="keyword">class </span><span class="identifier">GenericStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/index.html"><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.GenericStatement.Builder$<init>(com.jovial.db9010.Database)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.GenericStatement.Builder$run(kotlin.Function1((com.jovial.db9010.GenericStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-generic-statement/index.html"><span class="identifier">GenericStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-key/index.html"><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-key/-init-.html"><span class="identifier">Key</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.GenericStatement.Key$<init>(kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/result-handler.html"><span class="keyword">var </span><span class="identifier">resultHandler</span><span class="symbol">: </span><span class="symbol">(</span><span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">?</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/index.html"><span class="keyword">class </span><span class="identifier">InsertStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column-setter/index.html"><span class="identifier">ColumnSetter</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder/index.html"><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-statement-builder/index.html"><span class="identifier">StatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-insert-statement/index.html"><span class="identifier">InsertStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.Builder$run(kotlin.Function1((com.jovial.db9010.InsertStatement.Result, com.jovial.db9010.InsertStatement.Builder.run.T)))/resultBody">resultBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">Result</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder-no-results/index.html"><span class="keyword">class </span><span class="identifier">BuilderNoResults</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder-no-results/-init-.html"><span class="identifier">BuilderNoResults</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.BuilderNoResults$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.BuilderNoResults$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder-no-results/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.BuilderNoResults$run(kotlin.Function1((com.jovial.db9010.InsertStatement, com.jovial.db9010.InsertStatement.BuilderNoResults.run.T)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-insert-statement/index.html"><span class="identifier">InsertStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-key/index.html"><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-key/-init-.html"><span class="identifier">Key</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.Key$<init>(com.jovial.db9010.Table, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.Key$<init>(com.jovial.db9010.Table, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-result/index.html"><span class="keyword">class </span><span class="identifier">Result</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-results-holder/index.html"><span class="identifier">ResultsHolder</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-result/-init-.html"><span class="identifier">Result</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.Result$<init>(java.sql.ResultSet, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.Map((com.jovial.db9010.Column((kotlin.Any)), kotlin.Int)))/resultField">resultField</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.Result$<init>(java.sql.ResultSet, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.Map((com.jovial.db9010.Column((kotlin.Any)), kotlin.Int)))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.Result$<init>(java.sql.ResultSet, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.Map((com.jovial.db9010.Column((kotlin.Any)), kotlin.Int)))/resultIndex">resultIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter/index.html"><span class="keyword">class </span><span class="identifier">Parameter</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter/-init-.html"><span class="identifier">Parameter</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Parameter$<init>(com.jovial.db9010.ValueAdapter((com.jovial.db9010.Parameter.T)))/adapter">adapter</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter/adapter.html"><span class="keyword">val </span><span class="identifier">adapter</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter-setter/index.html"><span class="keyword">interface </span><span class="identifier">ParameterSetter</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter-setter/set.html"><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ParameterSetter$set(com.jovial.db9010.Parameter((com.jovial.db9010.ParameterSetter.set.T)), com.jovial.db9010.ParameterSetter.set.T)/p">p</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ParameterSetter$set(com.jovial.db9010.Parameter((com.jovial.db9010.ParameterSetter.set.T)), com.jovial.db9010.ParameterSetter.set.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter-setter/set-from-lambda.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ParameterSetter$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.ParameterSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ParameterSetter$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.ParameterSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/setter">setter</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-query-column/index.html"><span class="keyword">class </span><span class="identifier">QueryColumn</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-query-column/-init-.html"><span class="identifier">QueryColumn</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.QueryColumn$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.QueryColumn.T)), kotlin.String)/sqlName">sqlName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.QueryColumn$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.QueryColumn.T)), kotlin.String)/adapter">adapter</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.QueryColumn$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.QueryColumn.T)), kotlin.String)/jsonName">jsonName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;sqlName<span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ResultsHolder</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/column-index.html"><span class="keyword">protected</span> <span class="keyword">val </span><span class="identifier">columnIndex</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/columns.html"><span class="keyword">protected</span> <span class="keyword">val </span><span class="identifier">columns</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/get.html"><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ResultsHolder$get(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.get.T)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/get-from-lambda.html"><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">getFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ResultsHolder$getFromLambda(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.getFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ResultsHolder.getFromLambda.T)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ResultsHolder$getFromLambda(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.getFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ResultsHolder.getFromLambda.T)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/get-json.html"><span class="keyword">fun </span><span class="identifier">getJson</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/index.html"><span class="keyword">class </span><span class="identifier">SelectQuery</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-results-holder/index.html"><span class="identifier">ResultsHolder</span></a><span class="symbol">, </span><a href="com.jovial.db9010/-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/index.html"><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$<init>(com.jovial.db9010.Database, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$<init>(com.jovial.db9010.Database, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/for-update.html"><span class="keyword">fun </span><span class="identifier">forUpdate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/from.html"><span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$from(kotlin.Array((com.jovial.db9010.Table)))/tables">tables</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$run(kotlin.Function1((com.jovial.db9010.SelectQuery, com.jovial.db9010.SelectQuery.Builder.run.T)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-select-query/index.html"><span class="identifier">SelectQuery</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/delete.html"><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/insert.html"><span class="keyword">fun </span><span class="identifier">insert</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$insert(kotlin.Function0((kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/insert-from-json.html"><span class="keyword">fun </span><span class="identifier">insertFromJson</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$insertFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-key/index.html"><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-key/-init-.html"><span class="identifier">Key</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery.Key$<init>(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.List((com.jovial.db9010.Table)), kotlin.Boolean, kotlin.String)/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery.Key$<init>(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.List((com.jovial.db9010.Table)), kotlin.Boolean, kotlin.String)/tables">tables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery.Key$<init>(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.List((com.jovial.db9010.Table)), kotlin.Boolean, kotlin.String)/forUpdate">forUpdate</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery.Key$<init>(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.List((com.jovial.db9010.Table)), kotlin.Boolean, kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/next.html"><span class="keyword">fun </span><span class="identifier">next</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/next-or-fail.html"><span class="keyword">fun </span><span class="identifier">nextOrFail</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/set.html"><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$set(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.set.T)), com.jovial.db9010.SelectQuery.set.T)/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery$set(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.set.T)), com.jovial.db9010.SelectQuery.set.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/set-from-json.html"><span class="keyword">fun </span><span class="identifier">setFromJson</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/set-from-lambda.html"><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/setter">setter</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/set-from-lambda.html"><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, kotlin.Unit)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/update.html"><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-statement-builder/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">StatementBuilder</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-statement-builder/-init-.html"><span class="identifier">StatementBuilder</span><span class="symbol">(</span><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Table</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/-init-.html"><span class="identifier">Table</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Table$<init>(kotlin.String)/tableName">tableName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/columns.html"><span class="keyword">val </span><span class="identifier">columns</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/constraints-sql.html"><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">constraintsSql</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/primary-keys.html"><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">primaryKeys</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/table-name.html"><span class="keyword">val </span><span class="identifier">tableName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table-column/index.html"><span class="keyword">class </span><span class="identifier">TableColumn</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table-column/-init-.html"><span class="identifier">TableColumn</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/sqlName">sqlName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/sqlType">sqlType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/adapter">adapter</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/jsonName">jsonName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;"${table.tableName}.$sqlName"<span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table-column/qualified-name.html"><span class="keyword">val </span><span class="identifier">qualifiedName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table-column/sql-type.html"><span class="keyword">val </span><span class="identifier">sqlType</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table-column/table.html"><span class="keyword">val </span><span class="identifier">table</span><span class="symbol">: </span><a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">TextStatementBuilder</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-statement-builder/index.html"><span class="identifier">StatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-text-statement-builder/-init-.html"><span class="identifier">TextStatementBuilder</span><span class="symbol">(</span><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/index.html"><span class="keyword">object </span><span class="identifier">Types</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-big-decimal.html"><span class="keyword">val </span><span class="identifier">sqlBigDecimal</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html"><span class="identifier">BigDecimal</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-boolean.html"><span class="keyword">val </span><span class="identifier">sqlBoolean</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-bytes.html"><span class="keyword">val </span><span class="identifier">sqlBytes</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-double.html"><span class="keyword">val </span><span class="identifier">sqlDouble</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-float.html"><span class="keyword">val </span><span class="identifier">sqlFloat</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-int.html"><span class="keyword">val </span><span class="identifier">sqlInt</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-long.html"><span class="keyword">val </span><span class="identifier">sqlLong</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-object.html"><span class="keyword">val </span><span class="identifier">sqlObject</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-other.html"><span class="keyword">val </span><span class="identifier">sqlOther</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-short.html"><span class="keyword">val </span><span class="identifier">sqlShort</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/index.html"><span class="identifier">Short</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-string.html"><span class="keyword">val </span><span class="identifier">sqlString</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/index.html"><span class="keyword">class </span><span class="identifier">UpdateStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column-setter/index.html"><span class="identifier">ColumnSetter</span></a><span class="symbol">, </span><a href="com.jovial.db9010/-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/-builder/index.html"><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Builder$run(kotlin.Function1((com.jovial.db9010.UpdateStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-update-statement/index.html"><span class="identifier">UpdateStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/-key/index.html"><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/-key/-init-.html"><span class="identifier">Key</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Key$<init>(com.jovial.db9010.Table, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.String)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Key$<init>(com.jovial.db9010.Table, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.String)/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Key$<init>(com.jovial.db9010.Table, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter/index.html"><span class="keyword">interface </span><span class="identifier">ValueAdapter</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter/get.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapter$get(java.sql.ResultSet, kotlin.Int)/set">set</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$get(java.sql.ResultSet, kotlin.Int)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter/java-sql-types-type-or-fail.html"><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">javaSqlTypesTypeOrFail</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter/set.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/statement">statement</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter/update.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/set">set</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ValueAdapterNotNull</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter-not-null/-init-.html"><span class="identifier">ValueAdapterNotNull</span><span class="symbol">(</span><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter-not-null/java-sql-types-type-or-fail.html"><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">javaSqlTypesTypeOrFail</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter-not-null/nullable.html"><span class="identifier">@Synchronized</span> <span class="keyword">fun </span><span class="identifier">nullable</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapterNotNull$nullable(kotlin.Int)/javaSqlTypesType">javaSqlTypesType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">?</span><span class="symbol">&gt;</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/index.html"><span class="keyword">package</span>&nbsp;<span class="identifier">com.jovial.db9010</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Column</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/-init-.html"><span class="identifier">Column</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Column$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.Column.T)), kotlin.String)/sqlName">sqlName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Column$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.Column.T)), kotlin.String)/adapter">adapter</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Column$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.Column.T)), kotlin.String)/jsonName">jsonName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/adapter.html"><span class="keyword">val </span><span class="identifier">adapter</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/json-name.html"><span class="keyword">val </span><span class="identifier">jsonName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/qualified-name.html"><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">qualifiedName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/sql-name.html"><span class="keyword">val </span><span class="identifier">sqlName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column/to-string.html"><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column-setter/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ColumnSetter</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column-setter/-init-.html"><span class="identifier">ColumnSetter</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$<init>(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column-setter/set.html"><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$set(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.set.T)), com.jovial.db9010.ColumnSetter.set.T)/column">column</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ColumnSetter$set(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.set.T)), com.jovial.db9010.ColumnSetter.set.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column-setter/set-from-json.html"><span class="keyword">fun </span><span class="identifier">setFromJson</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$setFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-column-setter/set-from-lambda.html"><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ColumnSetter$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/setter">setter</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/index.html"><span class="keyword">class </span><span class="identifier">Database</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/connection.html"><span class="keyword">val </span><span class="identifier">connection</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html"><span class="identifier">Connection</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/create-table.html"><span class="keyword">fun </span><span class="identifier">createTable</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$createTable(com.jovial.db9010.Table, kotlin.Boolean)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$createTable(com.jovial.db9010.Table, kotlin.Boolean)/ifNotExists">ifNotExists</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/delete-from.html"><span class="keyword">fun </span><span class="identifier">deleteFrom</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$deleteFrom(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/drop-table.html"><span class="keyword">fun </span><span class="identifier">dropTable</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$dropTable(com.jovial.db9010.Table, kotlin.Boolean)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$dropTable(com.jovial.db9010.Table, kotlin.Boolean)/ifExists">ifExists</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/insert-into.html"><span class="keyword">fun </span><span class="identifier">insertInto</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-insert-statement/index.html"><span class="identifier">InsertStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/insert-into.html"><span class="keyword">fun </span><span class="identifier">insertInto</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$insertInto(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNoResults</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/select.html"><span class="keyword">fun </span><span class="identifier">select</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$select(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/select.html"><span class="keyword">fun </span><span class="identifier">select</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="com.jovial.db9010.Database$select(kotlin.Array((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/statement.html"><span class="keyword">fun </span><span class="identifier">statement</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/transaction.html"><span class="keyword">fun </span><span class="identifier">transaction</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/maxRetries">maxRetries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0<span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database$transaction(kotlin.Int, kotlin.Function0((kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/update.html"><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$update(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-database/with-connection.html"><span class="keyword">fun </span><span class="identifier">withConnection</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/url">url</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/user">user</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.Database.Companion$withConnection(kotlin.String, kotlin.String, kotlin.String, kotlin.Function1((com.jovial.db9010.Database, kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/index.html"><span class="keyword">class </span><span class="identifier">DeleteStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/index.html"><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$run(kotlin.Function1((com.jovial.db9010.DeleteStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-delete-statement/index.html"><span class="identifier">DeleteStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-key/index.html"><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-key/-init-.html"><span class="identifier">Key</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Key$<init>(com.jovial.db9010.Table, kotlin.String)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Key$<init>(com.jovial.db9010.Table, kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/do-not-cache.html"><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-statement-builder/index.html"><span class="identifier">StatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">doNotCache</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/index.html"><span class="keyword">class </span><span class="identifier">GenericStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/index.html"><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.GenericStatement.Builder$<init>(com.jovial.db9010.Database)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.GenericStatement.Builder$run(kotlin.Function1((com.jovial.db9010.GenericStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-generic-statement/index.html"><span class="identifier">GenericStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-key/index.html"><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-key/-init-.html"><span class="identifier">Key</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.GenericStatement.Key$<init>(kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/result-handler.html"><span class="keyword">var </span><span class="identifier">resultHandler</span><span class="symbol">: </span><span class="symbol">(</span><span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">?</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/index.html"><span class="keyword">class </span><span class="identifier">InsertStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column-setter/index.html"><span class="identifier">ColumnSetter</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder/index.html"><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-statement-builder/index.html"><span class="identifier">StatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table, kotlin.Function1((com.jovial.db9010.InsertStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-insert-statement/index.html"><span class="identifier">InsertStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.Builder$run(kotlin.Function1((com.jovial.db9010.InsertStatement.Result, com.jovial.db9010.InsertStatement.Builder.run.T)))/resultBody">resultBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">Result</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder-no-results/index.html"><span class="keyword">class </span><span class="identifier">BuilderNoResults</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder-no-results/-init-.html"><span class="identifier">BuilderNoResults</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.BuilderNoResults$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.BuilderNoResults$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-builder-no-results/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.BuilderNoResults$run(kotlin.Function1((com.jovial.db9010.InsertStatement, com.jovial.db9010.InsertStatement.BuilderNoResults.run.T)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-insert-statement/index.html"><span class="identifier">InsertStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-key/index.html"><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-key/-init-.html"><span class="identifier">Key</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.Key$<init>(com.jovial.db9010.Table, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.Key$<init>(com.jovial.db9010.Table, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-result/index.html"><span class="keyword">class </span><span class="identifier">Result</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-results-holder/index.html"><span class="identifier">ResultsHolder</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-insert-statement/-result/-init-.html"><span class="identifier">Result</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.InsertStatement.Result$<init>(java.sql.ResultSet, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.Map((com.jovial.db9010.Column((kotlin.Any)), kotlin.Int)))/resultField">resultField</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.Result$<init>(java.sql.ResultSet, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.Map((com.jovial.db9010.Column((kotlin.Any)), kotlin.Int)))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.InsertStatement.Result$<init>(java.sql.ResultSet, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.Map((com.jovial.db9010.Column((kotlin.Any)), kotlin.Int)))/resultIndex">resultIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter/index.html"><span class="keyword">class </span><span class="identifier">Parameter</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter/-init-.html"><span class="identifier">Parameter</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Parameter$<init>(com.jovial.db9010.ValueAdapter((com.jovial.db9010.Parameter.T)))/adapter">adapter</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter/adapter.html"><span class="keyword">val </span><span class="identifier">adapter</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter-setter/index.html"><span class="keyword">interface </span><span class="identifier">ParameterSetter</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter-setter/set.html"><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ParameterSetter$set(com.jovial.db9010.Parameter((com.jovial.db9010.ParameterSetter.set.T)), com.jovial.db9010.ParameterSetter.set.T)/p">p</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ParameterSetter$set(com.jovial.db9010.Parameter((com.jovial.db9010.ParameterSetter.set.T)), com.jovial.db9010.ParameterSetter.set.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-parameter-setter/set-from-lambda.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ParameterSetter$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.ParameterSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ParameterSetter$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.ParameterSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/setter">setter</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/plus.html"><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, kotlin.String)/s">s</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/plus.html"><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Parameter((kotlin.Any)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/plus.html"><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Column((kotlin.Any)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/plus.html"><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Table)/t">t</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/qualify-column-names.html"><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">qualifyColumnNames</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$qualifyColumnNames(com.jovial.db9010.qualifyColumnNames.T, kotlin.Boolean)/v">v</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-query-column/index.html"><span class="keyword">class </span><span class="identifier">QueryColumn</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-query-column/-init-.html"><span class="identifier">QueryColumn</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.QueryColumn$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.QueryColumn.T)), kotlin.String)/sqlName">sqlName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.QueryColumn$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.QueryColumn.T)), kotlin.String)/adapter">adapter</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.QueryColumn$<init>(kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.QueryColumn.T)), kotlin.String)/jsonName">jsonName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;sqlName<span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ResultsHolder</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/column-index.html"><span class="keyword">protected</span> <span class="keyword">val </span><span class="identifier">columnIndex</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/columns.html"><span class="keyword">protected</span> <span class="keyword">val </span><span class="identifier">columns</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/get.html"><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ResultsHolder$get(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.get.T)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/get-from-lambda.html"><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">getFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ResultsHolder$getFromLambda(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.getFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ResultsHolder.getFromLambda.T)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ResultsHolder$getFromLambda(com.jovial.db9010.Column((com.jovial.db9010.ResultsHolder.getFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ResultsHolder.getFromLambda.T)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-results-holder/get-json.html"><span class="keyword">fun </span><span class="identifier">getJson</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/index.html"><span class="keyword">class </span><span class="identifier">SelectQuery</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-results-holder/index.html"><span class="identifier">ResultsHolder</span></a><span class="symbol">, </span><a href="com.jovial.db9010/-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/index.html"><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$<init>(com.jovial.db9010.Database, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$<init>(com.jovial.db9010.Database, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/for-update.html"><span class="keyword">fun </span><span class="identifier">forUpdate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/from.html"><span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$from(kotlin.Array((com.jovial.db9010.Table)))/tables">tables</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$run(kotlin.Function1((com.jovial.db9010.SelectQuery, com.jovial.db9010.SelectQuery.Builder.run.T)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-select-query/index.html"><span class="identifier">SelectQuery</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/delete.html"><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/insert.html"><span class="keyword">fun </span><span class="identifier">insert</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$insert(kotlin.Function0((kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/insert-from-json.html"><span class="keyword">fun </span><span class="identifier">insertFromJson</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$insertFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-key/index.html"><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-key/-init-.html"><span class="identifier">Key</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery.Key$<init>(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.List((com.jovial.db9010.Table)), kotlin.Boolean, kotlin.String)/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery.Key$<init>(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.List((com.jovial.db9010.Table)), kotlin.Boolean, kotlin.String)/tables">tables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery.Key$<init>(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.List((com.jovial.db9010.Table)), kotlin.Boolean, kotlin.String)/forUpdate">forUpdate</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery.Key$<init>(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.collections.List((com.jovial.db9010.Table)), kotlin.Boolean, kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/next.html"><span class="keyword">fun </span><span class="identifier">next</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/next-or-fail.html"><span class="keyword">fun </span><span class="identifier">nextOrFail</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/set.html"><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$set(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.set.T)), com.jovial.db9010.SelectQuery.set.T)/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery$set(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.set.T)), com.jovial.db9010.SelectQuery.set.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/set-from-json.html"><span class="keyword">fun </span><span class="identifier">setFromJson</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/set-from-lambda.html"><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.Parameter((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/setter">setter</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/set-from-lambda.html"><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, kotlin.Unit)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.SelectQuery.setFromLambda.T)), kotlin.Function2((java.sql.ResultSet, kotlin.Int, kotlin.Unit)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/update.html"><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-statement-builder/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">StatementBuilder</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-statement-builder/-init-.html"><span class="identifier">StatementBuilder</span><span class="symbol">(</span><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Table</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/-init-.html"><span class="identifier">Table</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Table$<init>(kotlin.String)/tableName">tableName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/columns.html"><span class="keyword">val </span><span class="identifier">columns</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/constraints-sql.html"><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">constraintsSql</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/primary-keys.html"><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">primaryKeys</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table/table-name.html"><span class="keyword">val </span><span class="identifier">tableName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table-column/index.html"><span class="keyword">class </span><span class="identifier">TableColumn</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table-column/-init-.html"><span class="identifier">TableColumn</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/sqlName">sqlName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/sqlType">sqlType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/adapter">adapter</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.TableColumn$<init>(com.jovial.db9010.Table, kotlin.String, kotlin.String, com.jovial.db9010.ValueAdapter((com.jovial.db9010.TableColumn.T)), kotlin.String)/jsonName">jsonName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;"${table.tableName}.$sqlName"<span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table-column/qualified-name.html"><span class="keyword">val </span><span class="identifier">qualifiedName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table-column/sql-type.html"><span class="keyword">val </span><span class="identifier">sqlType</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-table-column/table.html"><span class="keyword">val </span><span class="identifier">table</span><span class="symbol">: </span><a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">TextStatementBuilder</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-statement-builder/index.html"><span class="identifier">StatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-text-statement-builder/-init-.html"><span class="identifier">TextStatementBuilder</span><span class="symbol">(</span><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/index.html"><span class="keyword">object </span><span class="identifier">Types</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-big-decimal.html"><span class="keyword">val </span><span class="identifier">sqlBigDecimal</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html"><span class="identifier">BigDecimal</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-boolean.html"><span class="keyword">val </span><span class="identifier">sqlBoolean</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-bytes.html"><span class="keyword">val </span><span class="identifier">sqlBytes</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-double.html"><span class="keyword">val </span><span class="identifier">sqlDouble</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-float.html"><span class="keyword">val </span><span class="identifier">sqlFloat</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-int.html"><span class="keyword">val </span><span class="identifier">sqlInt</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-long.html"><span class="keyword">val </span><span class="identifier">sqlLong</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-object.html"><span class="keyword">val </span><span class="identifier">sqlObject</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-other.html"><span class="keyword">val </span><span class="identifier">sqlOther</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-short.html"><span class="keyword">val </span><span class="identifier">sqlShort</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/index.html"><span class="identifier">Short</span></a><span class="symbol">&gt;</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-types/sql-string.html"><span class="keyword">val </span><span class="identifier">sqlString</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="identifier">ValueAdapterNotNull</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/index.html"><span class="keyword">class </span><span class="identifier">UpdateStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-column-setter/index.html"><span class="identifier">ColumnSetter</span></a><span class="symbol">, </span><a href="com.jovial.db9010/-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/-builder/index.html"><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">Key</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Builder$run(kotlin.Function1((com.jovial.db9010.UpdateStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-update-statement/index.html"><span class="identifier">UpdateStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/-key/index.html"><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Key</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-update-statement/-key/-init-.html"><span class="identifier">Key</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Key$<init>(com.jovial.db9010.Table, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.String)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Key$<init>(com.jovial.db9010.Table, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.String)/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.UpdateStatement.Key$<init>(com.jovial.db9010.Table, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))), kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter/index.html"><span class="keyword">interface </span><span class="identifier">ValueAdapter</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter/get.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapter$get(java.sql.ResultSet, kotlin.Int)/set">set</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$get(java.sql.ResultSet, kotlin.Int)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter/java-sql-types-type-or-fail.html"><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">javaSqlTypesTypeOrFail</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter/set.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/statement">statement</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter/update.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/set">set</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter-not-null/index.html"><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ValueAdapterNotNull</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter-not-null/-init-.html"><span class="identifier">ValueAdapterNotNull</span><span class="symbol">(</span><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter-not-null/java-sql-types-type-or-fail.html"><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">javaSqlTypesTypeOrFail</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-value-adapter-not-null/nullable.html"><span class="identifier">@Synchronized</span> <span class="keyword">fun </span><span class="identifier">nullable</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapterNotNull$nullable(kotlin.Int)/javaSqlTypesType">javaSqlTypesType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="com.jovial.db9010/-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">?</span><span class="symbol">&gt;</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>

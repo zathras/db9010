@@ -1,0 +1,265 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>com.jovial.db9010 - db9010</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">db9010</a>&nbsp;/&nbsp;<a href="./index.html">com.jovial.db9010</a><br/>
+<br/>
+<h2>Package com.jovial.db9010</h2>
+<h2>Package Documentation</h2>
+<p>In order to fluently write code as described in the
+<a href="../index.html">introduction</a>, it's helpful to know something about
+how the API is structured.  There are three main parts:
+The table and type definitions, 
+the <code>Database</code> entry point, 
+and the five statement
+types.  In the following, these areas are illustrated with UML
+diagrams</p>
+<h3>Table and Type Definitions</h3>
+<p><a href="types_uml.html"><img src="../types.svg" height=100 style="display: block; float: left; border: 2px solid; margin-right: 10px"></a></p>
+<p>The first step in writing a database system is normally to create
+table definitions.  These classes support building up a representation
+of tables, which are made up of columns.  Each column has a SQL type
+that gets mapped to and from Kotlin types.  There are also query
+columns that contain expressions, like "<code>SELECT COUNT(*)</code>" and so forth.</p>
+<p><img src="../transparent_pixel.png" width="100%" height="1"></p>
+<h3>The Database Entry Point</h3>
+<p><a href="main_uml.html"><img src="../main.svg" height=100 style="display: block; float: left; border: 2px solid; margin-right: 10px"></a></p>
+<p>Next, we look at <code>Database</code> class, which is the main entry point to the
+system.  It lets us make a JDBC connection, and various statement types.
+It has a series of methods that return different <code>Builder</code>
+objects for five types of SQL statement:  <code>SelectQuery</code>, 
+<code>DeleteStatement</code>, <code>UpdateStatement</code>,
+<code>InsertStatement</code>, and <code>GenericStatement</code>.</p>
+<p><img src="../transparent_pixel.png" width="100%" height="1"></p>
+<h3>Statements</h3>
+<p><a href="statements_uml.html"><img src="../statements.svg" height=100 style="display: block; float: left; border: 2px solid; margin-right: 10px"></a></p>
+<p>Finally, we consider the implementation of the five statement types.
+When a builder runs the client code, it give a reference to an object
+representing the statement.  This can be used by the client code to
+set any needed parameters, and set and get row values.</p>
+<p><img src="../transparent_pixel.png" width="100%" height="1"></p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-column/index.html">Column</a></h4>
+</td>
+<td>
+<p>A column in a select statement.  This can be either a <a href="-table-column/index.html">TableColumn</a> or a
+<a href="-query-column/index.html">QueryColumn</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Column</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-column-setter/index.html">ColumnSetter</a></h4>
+</td>
+<td>
+<p>Superclass for statements that can set table columns:  <a href="-update-statement/index.html">UpdateStatement</a> and
+<a href="-insert-statement/index.html">InsertStatement</a>.  This class maintains a list of the columns that have been
+set, and a code block to set each value.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ColumnSetter</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-database/index.html">Database</a></h4>
+</td>
+<td>
+<p>Represents a database that we connect to using JDBC.  This is the main
+entry point in this library for operations on a database.</p>
+<code><span class="keyword">class </span><span class="identifier">Database</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-delete-statement/index.html">DeleteStatement</a></h4>
+</td>
+<td>
+<p>An SQL delete statement.  See <a href="-database/delete-from.html">Database.deleteFrom</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">DeleteStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-generic-statement/index.html">GenericStatement</a></h4>
+</td>
+<td>
+<p>A generic SQL statement.  The entire statement body is set by user code.
+See <a href="-database/statement.html">Database.statement</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">GenericStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-insert-statement/index.html">InsertStatement</a></h4>
+</td>
+<td>
+<p>An SQL insert statement.  See <a href="-database/insert-into.html">Database.insertInto</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">InsertStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-column-setter/index.html"><span class="identifier">ColumnSetter</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-parameter/index.html">Parameter</a></h4>
+</td>
+<td>
+<p>A parameter to an SQL statement.  Parameters are represented as "?" in the text
+of a SQL statement.  Before executing a statement, they can be set, using
+<a href="-parameter-setter/set.html">ParameterSetter.set</a>, which sets one the underlying <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">java.sql.PreparedStatement</a>'s parameter
+values.</p>
+<code><span class="keyword">class </span><span class="identifier">Parameter</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-parameter-setter/index.html">ParameterSetter</a></h4>
+</td>
+<td>
+<p>Type for statements that can set parameters:  <a href="-delete-statement/index.html">DeleteStatement</a>, <a href="-update-statement/index.html">UpdateStatement</a>,
+<a href="-select-query/index.html">SelectQuery</a> and <a href="-generic-statement/index.html">GenericStatement</a>.  This class maintains a map of the parameters
+that have been set to code blocks that set the parameters on a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">PreparedStatement</a>, given
+the value index.</p>
+<code><span class="keyword">interface </span><span class="identifier">ParameterSetter</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-query-column/index.html">QueryColumn</a></h4>
+</td>
+<td>
+<p>A query column with a SQL expression, like "COUNT(*)".  <a href="-query-column/index.html">QueryColumn</a> values
+are read-only, and query columns cannot appear in a <a href="-select-query/index.html">SelectQuery</a> marked as
+for update.</p>
+<code><span class="keyword">class </span><span class="identifier">QueryColumn</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-results-holder/index.html">ResultsHolder</a></h4>
+</td>
+<td>
+<p>Abstract superclass for objects that hold a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a>:  <a href="-select-query/index.html">SelectQuery</a> and <a href="-insert-statement/-result/index.html">InsertStatement.Result</a>.
+This class maintains a map that is used to look up a desired <a href="-column/index.html">Column</a>, and find it in
+a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ResultsHolder</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-select-query/index.html">SelectQuery</a></h4>
+</td>
+<td>
+<p>An SQL select query.  See <a href="-database/select.html">Database.select</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">SelectQuery</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-results-holder/index.html"><span class="identifier">ResultsHolder</span></a><span class="symbol">, </span><a href="-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-statement-builder/index.html">StatementBuilder</a></h4>
+</td>
+<td>
+<p>Abstract superclass for the builder of all statement types.
+See also <a href="do-not-cache.html">StatementBuilder.doNotCache</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">StatementBuilder</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-table/index.html">Table</a></h4>
+</td>
+<td>
+<p>Base class for Table definitions.  A table is defined by making a singleton object
+that implements this type, with <a href="-table-column/index.html">TableColumn</a> members.  Columns register themselves
+with their table, which is the first parameter to their constructor.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Table</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-table-column/index.html">TableColumn</a></h4>
+</td>
+<td>
+<p>A column in a <a href="-table/index.html">Table</a>.  The SQL type of the column is determined by
+<a href="-table-column/sql-type.html">sqlType</a>, and the Kotlin type is determined by <a href="-column/adapter.html">adapter</a>.  See <a href="-table/index.html">Table</a></p>
+<code><span class="keyword">class </span><span class="identifier">TableColumn</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-text-statement-builder/index.html">TextStatementBuilder</a></h4>
+</td>
+<td>
+<p>Superclass for the builder of all statements that can have SQL strings
+added to the statement body.  See <a href="plus.html">TextStatementBuilder.plus</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">TextStatementBuilder</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-statement-builder/index.html"><span class="identifier">StatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-types/index.html">Types</a></h4>
+</td>
+<td>
+<code><span class="keyword">object </span><span class="identifier">Types</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-update-statement/index.html">UpdateStatement</a></h4>
+</td>
+<td>
+<p>An SQL update statement.  See <a href="-database/update.html">Database.update</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">UpdateStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-column-setter/index.html"><span class="identifier">ColumnSetter</span></a><span class="symbol">, </span><a href="-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-value-adapter/index.html">ValueAdapter</a></h4>
+</td>
+<td>
+<p>Interface describing an object that is used to adapt a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">PreparedStatement</a> or a
+<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a> by getting/setting a value of the appropriate type.</p>
+<code><span class="keyword">interface </span><span class="identifier">ValueAdapter</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-value-adapter-not-null/index.html">ValueAdapterNotNull</a></h4>
+</td>
+<td>
+<p>Abstract superclass for all value adapters of non-nullable types.  This
+provides an implementation of a method that creates a value adapter of the
+corresponding nullable type.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ValueAdapterNotNull</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="do-not-cache.html">doNotCache</a></h4>
+</td>
+<td>
+<p>Method to set this builder so that it creates a statement that is not cached
+by the <a href="-database/index.html">Database</a> object.  By default, statements are cached.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-statement-builder/index.html"><span class="identifier">StatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">doNotCache</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="plus.html">plus</a></h4>
+</td>
+<td>
+<p>Add a SQL string to the statement being built.</p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, kotlin.String)/s">s</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Add a parameter to the statement being built.  The text "?" is added, and the
+parameter is recorded so that the parameter's index can be determined when the
+statement is run.</p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Parameter((kotlin.Any)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Add a column to the statement being built.  The column's string representation in SQL
+is added.  See <a href="qualify-column-names.html">TextStatementBuilder.qualifyColumnNames</a></p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Column((kotlin.Any)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Add a table to the statement being built.  The table's name is appended.</p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Table)/t">t</span><span class="symbol">:</span>&nbsp;<a href="-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="qualify-column-names.html">qualifyColumnNames</a></h4>
+</td>
+<td>
+<p>Determine whether or not subsequent calls to <a href="plus.html">TextStatementBuilder.plus</a> with a
+<a href="-table-column/index.html">TableColumn</a> argument will use the qualified name (table_name.column_name), or just
+the column name.  If this method is not called, the default behavior is to qualify names.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">qualifyColumnNames</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$qualifyColumnNames(com.jovial.db9010.qualifyColumnNames.T, kotlin.Boolean)/v">v</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

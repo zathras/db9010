@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>db9010</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="./index.html">db9010</a><br/>
+<br/>
+<p><img src="90_10_rule.jpg" style="display: block; float: right"></p>
+<h2>db9010: A JDBC Database Wrapper</h2>
+<p>The module provides a wrapper over 
+<a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity">JDBC</a>
+that makes it more Kotlin-friendly.  It's inspired by
+<a href="https://github.com/JetBrains/Exposed">JetBrains/Exposed</a>, but
+it's vastly simpler.  Indeed, it was designed with the 90/10 rule in
+mind:  Often, you can get 90% of the benefit for 10% of the work
+(and complexity!).</p>
+<p><a href="com.jovial.db9010/index.html">See the package com.jovial.db9010 here.</a></p>
+<p>It aims to:</p>
+<ul><li>Provide type-safe access to databases</li>
+<li>Handle value conversions, including to and from <code>null</code></li>
+<li>Prevent misspelling of field names and tables, by representing them as
+   kotlin typed values.</li>
+<li>Provide a reasonably pretty, intuitive way of expressing SQL in Kotlin.</li>
+<li>Cache prepared SQL statements for performance.</li>
+<li>Let the user easily access the underlying JDBC structures for more
+   advanced uses (like some of the more esoteric SQL types).</li>
+<li>Partially automate translation to and from JSON.</li>
+<li>Not use reflection, or other techniques that make client code obscure.</li>
+</ul>
+<p>This library does not try to model all of SQL, nor does it provide an
+interoperability layer over different database implementations.
+It just tries to take care of the more error-prone and annoying aspects
+of dealing with SQL, while being small, efficient, and (hopefully) simple to
+use.</p>
+<p>There's a demo program that uses an in-memory SQL database.  It demonstrates
+code a little like this:</p>
+<pre><code>object People : Table("People") {
+
+    val id = TableColumn(this, "id", "INT AUTO_INCREMENT", Types.sqlInt)
+    val name = TableColumn(this, "name", "VARCHAR(50) NOT NULL", Types.sqlString)
+    val worried = TableColumn(this, "worried", "BOOLEAN", Types.sqlBoolean)
+
+    override val primaryKeys = listOf(id)
+}
+
+fun main() {
+    Database.withConnection("jdbc:h2:mem:test", "root", "") { db -&gt;
+
+        db.createTable(People)
+
+        db.statement().qualifyColumnNames(false).doNotCache() +
+            "CREATE INDEX " + People + "_name on " + 
+            People + "(" + People.name + ")" run {}
+
+
+        People.apply {
+            db.insertInto(this) run { row -&gt;
+                row[name] = "Alfred E. Neuman"
+                row[worried] = false
+            }
+        }
+
+        val param = Parameter(Types.sqlString)
+        db.select(People.columns).from(People) + 
+                "WHERE " + People.name + " &lt;&gt; " + param run { query -&gt;
+            query[param] = "Bob Dobbs"      // Hide Bob, if he's there
+
+            while (query.next()) {
+                val idValue = query[People.id];  // It's type-safe
+                println("id:  ${idValue}")
+                println("name:  ${query[People.name]}")
+                println("worried?  ${query[People.worried]}")
+            }
+        }
+
+        db.dropTable(People)
+    }
+}
+</code></pre>
+<h3>Threading Considerations</h3>
+<p>This library assumes that each <code>Database</code> object is accessed within one
+thread.  If the client code allows multiple threads to access a
+<code>Database</code> object, it is up to the client code to do appropriate locking
+so that only one thread can use the <code>Database</code> at a time.  This library is built
+on JDBC, which is inherently synchronous.</p>
+<h3>Logging</h3>
+<p>This library uses the <code>java.util.logging</code> module, using the
+logger for the package <code>com.jovial.db9010</code>.  When an SQL 
+statement is prepared, it's logged at the <code>FINE</code> logging level.</p>
+<h3>Packages</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="com.jovial.db9010/index.html">com.jovial.db9010</a></h4>
+</td>
+<td>
+<h2>Package Documentation</h2>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Index</h3>
+<a href="alltypes/index.html">All Types</a>
+</BODY>
+</HTML>

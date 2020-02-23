@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Parameter - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">Parameter</a><br/>
+<br/>
+<h1>Parameter</h1>
+<code><span class="keyword">class </span><span class="identifier">Parameter</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A parameter to an SQL statement.  Parameters are represented as "?" in the text
+of a SQL statement.  Before executing a statement, they can be set, using
+<a href="../-parameter-setter/set.html">ParameterSetter.set</a>, which sets one the underlying <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">java.sql.PreparedStatement</a>'s parameter
+values.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>A parameter to an SQL statement.  Parameters are represented as "?" in the text
+of a SQL statement.  Before executing a statement, they can be set, using
+<a href="../-parameter-setter/set.html">ParameterSetter.set</a>, which sets one the underlying <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">java.sql.PreparedStatement</a>'s parameter
+values.</p>
+<code><span class="identifier">Parameter</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Parameter$<init>(com.jovial.db9010.ValueAdapter((com.jovial.db9010.Parameter.T)))/adapter">adapter</span><span class="symbol">:</span>&nbsp;<a href="../-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="adapter.html">adapter</a></h4>
+</td>
+<td>
+<p>This parameters Kotlin type, and a converter between that and JDBC's type system.</p>
+<code><span class="keyword">val </span><span class="identifier">adapter</span><span class="symbol">: </span><a href="../-value-adapter/index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

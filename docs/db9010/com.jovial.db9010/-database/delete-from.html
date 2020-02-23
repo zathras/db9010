@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Database.deleteFrom - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="index.html">Database</a>&nbsp;/&nbsp;<a href="./delete-from.html">deleteFrom</a><br/>
+<br/>
+<h1>deleteFrom</h1>
+<a name="com.jovial.db9010.Database$deleteFrom(com.jovial.db9010.Table)"></a>
+<code><span class="keyword">fun </span><span class="identifier">deleteFrom</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$deleteFrom(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code>
+<p>Run a DELETE FROM statement for the given table.  See <a href="../-delete-statement/-builder/index.html">DeleteStatement.Builder</a> for
+setting additional arguments and parameters.  The statement is run after the code
+body sent to <a href="../-delete-statement/-builder/run.html">DeleteStatement.Builder.run</a> completes.</p>
+<p>Usage example:</p>
+<pre><code>    val param = Parameter(Types.sqlString)
+    val deleted = db.deleteFrom(Users) + "WHERE " +
+            Users.name + " LIKE " + param run {  d -&gt;
+        d[param] = "%thing"
+    }
+    println("$deleted rows deleted.")
+</code></pre>
+</BODY>
+</HTML>

@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Database.statement - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="index.html">Database</a>&nbsp;/&nbsp;<a href="./statement.html">statement</a><br/>
+<br/>
+<h1>statement</h1>
+<a name="com.jovial.db9010.Database$statement()"></a>
+<code><span class="keyword">fun </span><span class="identifier">statement</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code>
+<p>Run a generic SQL statement.  See <a href="../-generic-statement/-builder/index.html">GenericStatement.Builder</a> for setting
+arguments and parameters, including the statement text.A</p>
+<p>Usage example:</p>
+<pre><code>    db.statement().qualifyColumnNames(false).doNotCache() +
+            "CREATE INDEX " + People + "_name on " +
+            People + "(" + People.name + ")" run {}
+</code></pre>
+</BODY>
+</HTML>

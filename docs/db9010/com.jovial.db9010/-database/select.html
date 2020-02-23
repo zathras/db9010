@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Database.select - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="index.html">Database</a>&nbsp;/&nbsp;<a href="./select.html">select</a><br/>
+<br/>
+<h1>select</h1>
+<a name="com.jovial.db9010.Database$select(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))"></a>
+<code><span class="keyword">fun </span><span class="identifier">select</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$select(kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code>
+<p>Run a SELECT statement over the given columns.  See
+<a href="../-select-query/-builder/index.html">SelectQuery.Builder</a> for parameters and arguments that can be
+set.  The query is run within the code block given to
+<a href="../-select-query/-builder/run.html">SelectQuery.Builder.run</a> when that code executes <a href="../-select-query/next.html">SelectQuery.next</a>.</p>
+<p>Usage example:</p>
+<pre><code>    db.select(People.columns).from(People) + "WHERE " + People.name + " &lt;&gt; " + param run
+    { query -&gt;
+        query[param] = "Bob Dobbs"      // Hide Bob, if he's there
+        while (query.next()) {
+            println("name:  ${query[People.name]}")
+            println("worried:  ${query[People.worried]}")
+        }
+    }
+</code></pre><a name="com.jovial.db9010.Database$select(kotlin.Array((com.jovial.db9010.Column((kotlin.Any)))))"></a>
+<code><span class="keyword">fun </span><span class="identifier">select</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="com.jovial.db9010.Database$select(kotlin.Array((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="../-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code>
+<p>Run a SELECT statement over the given columns.  See
+<a href="../-select-query/-builder/index.html">SelectQuery.Builder</a> for parameters and arguments that can be
+set.  The query is run within the code block given to
+<a href="../-select-query/-builder/run.html">SelectQuery.Builder.run</a> when that code executes <a href="../-select-query/next.html">SelectQuery.next</a>.</p>
+<p>Usage example:</p>
+<pre><code>    db.select(Users.name, Cities.name).from(Users) +
+            " INNER JOIN "  + Cities + " ON " + Cities.id + "=" + Users.cityId +
+            " ORDER BY " + Users.name run
+    { r -&gt;
+        while (r.next()) {
+            println("\t${r[Users.name]}\t${r[Cities.name]}")
+        }
+    }
+</code></pre>
+</BODY>
+</HTML>

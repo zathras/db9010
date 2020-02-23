@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ColumnSetter - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">ColumnSetter</a><br/>
+<br/>
+<h1>ColumnSetter</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ColumnSetter</span></code>
+<p>Superclass for statements that can set table columns:  <a href="../-update-statement/index.html">UpdateStatement</a> and
+<a href="../-insert-statement/index.html">InsertStatement</a>.  This class maintains a list of the columns that have been
+set, and a code block to set each value.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>Superclass for statements that can set table columns:  <a href="../-update-statement/index.html">UpdateStatement</a> and
+<a href="../-insert-statement/index.html">InsertStatement</a>.  This class maintains a list of the columns that have been
+set, and a code block to set each value.</p>
+<code><span class="identifier">ColumnSetter</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$<init>(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="set.html">set</a></h4>
+</td>
+<td>
+<p>Set the given <a href="set.html#com.jovial.db9010.ColumnSetter$set(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.set.T)), com.jovial.db9010.ColumnSetter.set.T)/column">column</a> to <a href="set.html#com.jovial.db9010.ColumnSetter$set(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.set.T)), com.jovial.db9010.ColumnSetter.set.T)/value">value</a>.</p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$set(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.set.T)), com.jovial.db9010.ColumnSetter.set.T)/column">column</span><span class="symbol">:</span>&nbsp;<a href="../-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ColumnSetter$set(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.set.T)), com.jovial.db9010.ColumnSetter.set.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="set-from-json.html">setFromJson</a></h4>
+</td>
+<td>
+<p>Set zero or more columns from a JSON-friendly map of column names to values,
+<a href="set-from-json.html#com.jovial.db9010.ColumnSetter$setFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</a>.  The values are set using <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setObject(int, java.lang.Object, int)">PreparedStatement.setObject</a>, or, if
+null, <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setNull(int, int)">PreparedStatement.setNull</a>.  See also <a href="../-types/sql-object.html">Types.sqlObject</a>.</p>
+<code><span class="keyword">fun </span><span class="identifier">setFromJson</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$setFromJson(kotlin.collections.Map((kotlin.String, kotlin.Any)))/jsonValue">jsonValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="set-from-lambda.html">setFromLambda</a></h4>
+</td>
+<td>
+<p>Set the column <a href="set-from-lambda.html#com.jovial.db9010.ColumnSetter$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/c">c</a>, using a code block that operates on a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">PreparedStatement</a>
+using the provided column index.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">setFromLambda</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ColumnSetter$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="../-table-column/index.html"><span class="identifier">TableColumn</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ColumnSetter$setFromLambda(com.jovial.db9010.TableColumn((com.jovial.db9010.ColumnSetter.setFromLambda.T)), kotlin.Function2((kotlin.Int, java.sql.PreparedStatement, kotlin.Unit)))/setter">setter</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">,</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-insert-statement/index.html">InsertStatement</a></h4>
+</td>
+<td>
+<p>An SQL insert statement.  See <a href="../-database/insert-into.html">Database.insertInto</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">InsertStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ColumnSetter</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-update-statement/index.html">UpdateStatement</a></h4>
+</td>
+<td>
+<p>An SQL update statement.  See <a href="../-database/update.html">Database.update</a>.</p>
+<code><span class="keyword">class </span><span class="identifier">UpdateStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ColumnSetter</span></a><span class="symbol">, </span><a href="../-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

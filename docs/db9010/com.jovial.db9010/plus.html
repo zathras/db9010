@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>plus - db9010</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">db9010</a>&nbsp;/&nbsp;<a href="index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./plus.html">plus</a><br/>
+<br/>
+<h1>plus</h1>
+<a name="com.jovial.db9010$plus(com.jovial.db9010.plus.T, kotlin.String)"></a>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, kotlin.String)/s">s</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Add a SQL string to the statement being built.</p>
+<a name="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Parameter((kotlin.Any)))"></a>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Parameter((kotlin.Any)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Add a parameter to the statement being built.  The text "?" is added, and the
+parameter is recorded so that the parameter's index can be determined when the
+statement is run.</p>
+<a name="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Column((kotlin.Any)))"></a>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Column((kotlin.Any)))/c">c</span><span class="symbol">:</span>&nbsp;<a href="-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Add a column to the statement being built.  The column's string representation in SQL
+is added.  See <a href="qualify-column-names.html">TextStatementBuilder.qualifyColumnNames</a></p>
+<a name="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Table)"></a>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-text-statement-builder/index.html"><span class="identifier">TextStatementBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010$plus(com.jovial.db9010.plus.T, com.jovial.db9010.Table)/t">t</span><span class="symbol">:</span>&nbsp;<a href="-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Add a table to the statement being built.  The table's name is appended.</p>
+</BODY>
+</HTML>

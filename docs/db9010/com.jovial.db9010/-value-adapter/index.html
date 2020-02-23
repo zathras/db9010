@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ValueAdapter - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">ValueAdapter</a><br/>
+<br/>
+<h1>ValueAdapter</h1>
+<code><span class="keyword">interface </span><span class="identifier">ValueAdapter</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Interface describing an object that is used to adapt a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html">PreparedStatement</a> or a
+<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a> by getting/setting a value of the appropriate type.</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="java-sql-types-type-or-fail.html">javaSqlTypesTypeOrFail</a></h4>
+</td>
+<td>
+<p>Give the <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/Types.html">java.sql.Types</a> type of this adapter if it is an adapter for
+nullable types.  If it is not, fail with an IllegalArgumentException.
+This value is needed when setting a value to null.
+See <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setNull(int, int)">PreparedStatement.setNull</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">javaSqlTypesTypeOrFail</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="get.html">get</a></h4>
+</td>
+<td>
+<p>Get the column at <a href="get.html#com.jovial.db9010.ValueAdapter$get(java.sql.ResultSet, kotlin.Int)/index">index</a> in <a href="get.html#com.jovial.db9010.ValueAdapter$get(java.sql.ResultSet, kotlin.Int)/set">set</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapter$get(java.sql.ResultSet, kotlin.Int)/set">set</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$get(java.sql.ResultSet, kotlin.Int)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="set.html">set</a></h4>
+</td>
+<td>
+<p>Set the column at <a href="set.html#com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/index">index</a> within the <a href="set.html#com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/statement">statement</a> to <a href="set.html#com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/value">value</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/statement">statement</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$set(java.sql.PreparedStatement, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="update.html">update</a></h4>
+</td>
+<td>
+<p>Update (set) the column at <a href="update.html#com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/index">index</a> in <a href="update.html#com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/set">set</a> to <a href="update.html#com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/value">value</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/set">set</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html"><span class="identifier">ResultSet</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ValueAdapter$update(java.sql.ResultSet, kotlin.Int, com.jovial.db9010.ValueAdapter.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-value-adapter-not-null/index.html">ValueAdapterNotNull</a></h4>
+</td>
+<td>
+<p>Abstract superclass for all value adapters of non-nullable types.  This
+provides an implementation of a method that creates a value adapter of the
+corresponding nullable type.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ValueAdapterNotNull</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ValueAdapter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

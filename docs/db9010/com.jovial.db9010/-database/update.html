@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Database.update - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="index.html">Database</a>&nbsp;/&nbsp;<a href="./update.html">update</a><br/>
+<br/>
+<h1>update</h1>
+<a name="com.jovial.db9010.Database$update(com.jovial.db9010.Table)"></a>
+<code><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.Database$update(com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="../-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></code>
+<p>Run an UPDATE statement on the given table.  Rows to be updated are identified
+with calls to <a href="../-parameter-setter/set.html">ParameterSetter.set</a> within the code body passed to
+<a href="../-update-statement/-builder/run.html">UpdateStatement.Builder.run</a>.</p>
+<p>Usage example:</p>
+<pre><code>    val idStr = Parameter(Types.sqlString)
+    val num = db.update(Users) + "WHERE " + id + "=" + idStr run { u -&gt;
+        u[idStr] = "alex"   // Sets the parameter
+        u[Users.name] = "Alexy"   // Sets the new value of the name column
+        u[users.cityId] = pragueId    // Sets the new value of the cityId column
+    }
+    println("Updated $num row(s)")
+</code></pre>
+</BODY>
+</HTML>

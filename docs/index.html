@@ -1,5 +1,79 @@
-<html>
-<body>
-Future home of db9010
+<html lang="en">
+<head>
+<title>
+db9010, A Kotlin Wrapper over JDBC
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="kotlin, JDBC">
+<meta name="description" content="db9010, A Kotlin Wrapper over JDBC">
+<meta http-equiv="Content-Language" content="en-us">
+</head>
+<body bgcolor="#ffffff">
+<img src="db9010/90_10_rule.jpg" style="display: block; float: right"></p>
+<h1>db9010</h1>
+<p>
+<p>db9010 is a module that provides a wrapper over 
+<a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity">JDBC</a>
+that makes it more Kotlin-friendly.  It's inspired by
+<a href="https://github.com/JetBrains/Exposed">JetBrains/Exposed</a>, but
+it's vastly simpler.  Indeed, it was designed with the 90/10 rule in
+mind:  Often, you can get 90% of the benefit for 10% of the work
+(and complexity!).</p>
+<ul style="font-size: 1.5em; line-height: 1.5">
+<li><a href="db9010/index.html">Documentation</a>
+<li><a href="https://github.com/zathras/db9010/">Github Repository</a>
+<li><a href="https://github.com/zathras/misc/tree/master/maven_import">Sample
+    Maven config</a> in a minimal project.  See especially
+    <a href="https://github.com/zathras/misc/blob/master/maven_import/build.gradle.kts"><code>build.gradle.kts</code></a>.
+</ul>
+<p>
+<hr>
+<p>
+db9010 lets you access JDBC from Kotlin with code that looks like this:
+<pre>
+import com.jovial.db9010.*
+
+object People : Table("People") {
+
+    val id = TableColumn(this, "id", "INT AUTO_INCREMENT", Types.sqlInt)
+    val name = TableColumn(this, "name", "VARCHAR(50) NOT NULL", Types.sqlString)
+    val worried = TableColumn(this, "worried", "BOOLEAN", Types.sqlBoolean)
+
+    override val primaryKeys = listOf(id)
+}
+
+fun main() {
+
+    Database.withConnection("jdbc:h2:mem:test", "root", "") { db -&gt;
+
+        db.createTable(People)
+
+        db.statement().qualifyColumnNames(false).doNotCache() +
+            "CREATE INDEX " + People + "_name on " +
+            People + "(" + People.name + ")" run {}
+
+        People.apply {
+            db.insertInto(this) run { row -&gt;
+                row[name] = "Alfred E. Neuman"
+                row[worried] = false
+            }
+        }
+
+        val param = Parameter(Types.sqlString)
+        db.select(People.columns).from(People) + 
+                "WHERE " + People.name + " &lt;&gt; " + param run 
+        { query -&gt;
+            query[param] = "Bob Dobbs"      // Hide Bob, if he's there
+            while (query.next()) {
+                val idValue = query[People.id];  // It's type-safe
+                println("id:  ${idValue}")
+                println("name:  ${query[People.name]}")
+                println("worried?  ${query[People.worried]}")
+            }
+        }
+        db.dropTable(People)
+    }
+}
+
+</pre>
 </body>
-</html>
