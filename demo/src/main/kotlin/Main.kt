@@ -9,7 +9,7 @@ object People : Table("People") {
 
     val id = TableColumn(this, "id", "INT AUTO_INCREMENT", Types.sqlInt)
     val name = TableColumn(this, "name", "VARCHAR(50) NOT NULL", Types.sqlString)
-    val worried = TableColumn(this, "worried", "BOOLEAN", Types.sqlBoolean)
+    val worried = TableColumn(this, "worried", "BOOLEAN NOT NULL", Types.sqlBoolean)
 
     override val primaryKeys = listOf(id)
 }

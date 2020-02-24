@@ -22,59 +22,64 @@ mind:  Often, you can get 90% of the benefit for 10% of the work
 <ul style="font-size: 1.5em; line-height: 1.5">
 <li><a href="db9010/index.html">Documentation</a>
 <li><a href="https://github.com/zathras/db9010/">Github Repository</a>
-<li><a href="https://github.com/zathras/misc/tree/master/maven_import">Sample
-    Maven config</a> in a minimal project.  See especially
+<li>Sample Maven config in a <a href="https://github.com/zathras/misc/tree/master/maven_import">minimal
+    project</a>.  See especially
     <a href="https://github.com/zathras/misc/blob/master/maven_import/build.gradle.kts"><code>build.gradle.kts</code></a>.
 <li>Maven repo at <a href="http://maven.jovial.com/">http://maven.jovial.com/</a>.
 </ul>
 <p>
 <hr>
 <p>
-db9010 lets you access JDBC from Kotlin with code that looks like this:
-<pre>
-import com.jovial.db9010.*
+db9010 lets you access JDBC from Kotlin with code that looks like the
+following example.  Essentially, it gives you a way to define tables and
+query columns, and run SQL statements using type-safe, named accessors.  It's
+a thin layer over JDBC with a regular syntax, so hopefully it's easy to
+understand.
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;padding:1em 2em;"><pre style="margin: 0; line-height: 125%">import com.jovial.db9010.*
+import java.util.logging.Handler
+import java.util.logging.Level
+import java.util.logging.LogRecord
+import java.util.logging.Logger
 
-object People : Table("People") {
+object People : Table(<span style="color: #BA2121">&quot;People&quot;</span>) {
 
-    val id = TableColumn(this, "id", "INT AUTO_INCREMENT", Types.sqlInt)
-    val name = TableColumn(this, "name", "VARCHAR(50) NOT NULL", Types.sqlString)
-    val worried = TableColumn(this, "worried", "BOOLEAN", Types.sqlBoolean)
+    <span style="color: #008000; font-weight: bold">val</span> id = TableColumn(<span style="color: #008000; font-weight: bold">this</span>, <span style="color: #BA2121">&quot;id&quot;</span>, <span style="color: #BA2121">&quot;INT AUTO_INCREMENT&quot;</span>, Types.sqlInt)
+    <span style="color: #008000; font-weight: bold">val</span> name = TableColumn(<span style="color: #008000; font-weight: bold">this</span>, <span style="color: #BA2121">&quot;name&quot;</span>, <span style="color: #BA2121">&quot;VARCHAR(50) NOT NULL&quot;</span>, Types.sqlString)
+    <span style="color: #008000; font-weight: bold">val</span> worried = TableColumn(<span style="color: #008000; font-weight: bold">this</span>, <span style="color: #BA2121">&quot;worried&quot;</span>, <span style="color: #BA2121">&quot;BOOLEAN NOT NULL&quot;</span>, Types.sqlBoolean)
 
-    override val primaryKeys = listOf(id)
-}
+    <span style="color: #008000; font-weight: bold">override</span> <span style="color: #008000; font-weight: bold">val</span> primaryKeys = listOf(id)
+}   
 
-fun main() {
+<span style="color: #008000; font-weight: bold">fun</span> <span style="color: #0000FF">main</span>() {
 
-    Database.withConnection("jdbc:h2:mem:test", "root", "") { db -&gt;
+    Database.withConnection(<span style="color: #BA2121">&quot;jdbc:h2:mem:test&quot;</span>, <span style="color: #BA2121">&quot;root&quot;</span>, <span style="color: #BA2121">&quot;&quot;</span>) { db -&gt;
 
         db.createTable(People)
 
-        db.statement().qualifyColumnNames(false).doNotCache() +
-            "CREATE INDEX " + People + "_name on " +
-            People + "(" + People.name + ")" run {}
+        db.statement().qualifyColumnNames(<span style="color: #008000; font-weight: bold">false</span>).doNotCache() +
+            <span style="color: #BA2121">&quot;CREATE INDEX &quot;</span> + People + <span style="color: #BA2121">&quot;_name on &quot;</span> + 
+            People + <span style="color: #BA2121">&quot;(&quot;</span> + People.name + <span style="color: #BA2121">&quot;)&quot;</span> run {}
 
         People.apply {
-            db.insertInto(this) run { row -&gt;
-                row[name] = "Alfred E. Neuman"
-                row[worried] = false
-            }
-        }
+            db.insertInto(<span style="color: #008000; font-weight: bold">this</span>) run { row -&gt;
+                row[name] = <span style="color: #BA2121">&quot;Alfred E. Neuman&quot;</span>
+                row[worried] = <span style="color: #008000; font-weight: bold">false</span>
+            }   
+        }   
 
-        val param = Parameter(Types.sqlString)
-        db.select(People.columns).from(People) + 
-                "WHERE " + People.name + " &lt;&gt; " + param run 
-        { query -&gt;
-            query[param] = "Bob Dobbs"      // Hide Bob, if he's there
-            while (query.next()) {
-                val idValue = query[People.id];  // It's type-safe
-                println("id:  ${idValue}")
-                println("name:  ${query[People.name]}")
-                println("worried?  ${query[People.worried]}")
-            }
-        }
+        <span style="color: #008000; font-weight: bold">val</span> param = Parameter(Types.sqlString)
+        db.select(People.columns).from(People) + <span style="color: #BA2121">&quot;WHERE &quot;</span> + People.name + <span style="color: #BA2121">&quot; &lt;&gt; &quot;</span> + param run { query -&gt;
+            query[param] = <span style="color: #BA2121">&quot;Bob Dobbs&quot;</span>      <span style="color: #408080; font-style: italic">// Hide Bob, if he&#39;s there</span>
+            <span style="color: #008000; font-weight: bold">while</span> (query.next()) {
+                <span style="color: #008000; font-weight: bold">val</span> idValue = query[People.id];  <span style="color: #408080; font-style: italic">// It&#39;s type-safe</span>
+                println(<span style="color: #BA2121">&quot;id:  ${idValue}&quot;</span>)
+                println(<span style="color: #BA2121">&quot;name:  ${query[People.name]}&quot;</span>)
+                println(<span style="color: #BA2121">&quot;worried?  ${query[People.worried]}&quot;</span>)
+            }   
+        }   
         db.dropTable(People)
-    }
+    }   
 }
+</pre></div>
 
-</pre>
 </body>
