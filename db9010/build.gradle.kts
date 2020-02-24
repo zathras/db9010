@@ -113,15 +113,14 @@ tasks {
         repositories {
             maven {
             url = uri("file:///home/billf/github/zathras.github.io/maven")
-            /*  For Github Packages:
-                name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/zathras/db9010")
-                credentials {
-                    val home = System.getenv("HOME")
-                    username = File("$home/.ssh/other/github.maven.user").readText().trim()
-                    password = File("$home/.ssh/other/github.maven.token").readText().trim()
-                }
-            */
+            //  For Github Packages:
+            //  name = "GitHubPackages"
+            //  url = uri("https://maven.pkg.github.com/zathras/db9010")
+            //  credentials {
+            //      val home = System.getenv("HOME")
+            //      username = File("$home/.ssh/other/github.maven.user").readText().trim()
+            //      password = File("$home/.ssh/other/github.maven.token").readText().trim()
+            //  }
             }
         }
         publications {
