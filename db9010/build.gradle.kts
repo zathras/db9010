@@ -1,5 +1,6 @@
 import org.jetbrains.dokka.gradle.DokkaTask
 import java.io.File
+import java.util.Date
 import kotlin.text.Regex
 
 plugins {
@@ -7,6 +8,7 @@ plugins {
     kotlin("jvm") // version set in parent
     id("org.jetbrains.dokka") version "0.10.1"
     `maven-publish`
+    id("com.jfrog.bintray") version "1.8.4"  // https://github.com/bintray/gradle-bintray-plugin/releases
 }
 
 buildscript {
@@ -18,10 +20,10 @@ buildscript {
 }
 
 group = "com.jovial"
-version = "0.1.1-SNAPSHOT"
+version = "0.2.0"
 
 repositories {
-    mavenCentral()
+    // mavenCentral()
     jcenter()
 }
 
@@ -106,6 +108,7 @@ tasks {
         from(sourceSets["main"].allSource)
     }
 
+    /* Publish to a local maven repo:
     publishing {
         repositories {
             maven {
@@ -122,7 +125,7 @@ tasks {
             }
         }
         publications {
-            // create<MavenPublication>("default") {
+            // create<MavenPublication>("default")
             register<MavenPublication>("gpr") {
                 from(project.components["java"])
                 artifact(dokkaJar)
@@ -130,4 +133,34 @@ tasks {
             }
         }
     }
+     */
+
+    // Publishing to bintray:
+
+    publishing {
+        publications {
+            register<MavenPublication>("bintray") {
+                from(project.components["java"])
+                artifact(dokkaJar)
+                artifact(sourcesJar)
+            }
+        }
+    }
+
+    bintray {
+        val home = System.getenv("HOME")
+        user = File("$home/.ssh/other/bintray.user").readText().trim()
+        key = File("$home/.ssh/other/bintray.api_key").readText().trim()
+        setPublications("bintray")
+        pkg.repo = "maven"
+        pkg.name = "com.jovial.db9010"
+        pkg.setLicenses("MIT")
+        pkg.vcsUrl = "https://github.com/zathras/db9010.git"
+        pkg.version.name = version.toString()
+        pkg.version.desc = "Release $version"
+        pkg.version.released = Date().toString()
+        pkg.version.vcsTag = version.toString()
+    }
 }
+
+
