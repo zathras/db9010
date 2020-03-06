@@ -102,6 +102,7 @@
 </HEAD>
 <BODY>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/get-reusable.html"><span class="keyword">fun </span><span class="identifier">getReusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="com.jovial.db9010/-reusable-delete-statement/index.html"><span class="identifier">ReusableDeleteStatement</span></a></a></a><br/>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$run(kotlin.Function1((com.jovial.db9010.DeleteStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-delete-statement/index.html"><span class="identifier">DeleteStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
 </BODY>
 </HTML>
@@ -141,6 +142,7 @@
 </HEAD>
 <BODY>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.GenericStatement.Builder$<init>(com.jovial.db9010.Database)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/get-reusable.html"><span class="keyword">fun </span><span class="identifier">getReusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="com.jovial.db9010/-reusable-generic-statement/index.html"><span class="identifier">ReusableGenericStatement</span></a></a></a><br/>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.GenericStatement.Builder$run(kotlin.Function1((com.jovial.db9010.GenericStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-generic-statement/index.html"><span class="identifier">GenericStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
 </HTML>
@@ -286,6 +288,46 @@
 </BODY>
 </HTML>
 </ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-delete-statement/index.html"><span class="keyword">class </span><span class="identifier">ReusableDeleteStatement</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-delete-statement/-init-.html"><span class="identifier">ReusableDeleteStatement</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableDeleteStatement$<init>(java.sql.PreparedStatement, kotlin.collections.List((com.jovial.db9010.Parameter((kotlin.Any)))))/statement">statement</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ReusableDeleteStatement$<init>(java.sql.PreparedStatement, kotlin.collections.List((com.jovial.db9010.Parameter((kotlin.Any)))))/parameters">parameters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-delete-statement/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableDeleteStatement$run(kotlin.Function1((com.jovial.db9010.DeleteStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-delete-statement/index.html"><span class="identifier">DeleteStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-generic-statement/index.html"><span class="keyword">class </span><span class="identifier">ReusableGenericStatement</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-generic-statement/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableGenericStatement$run(kotlin.Function1((com.jovial.db9010.GenericStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-generic-statement/index.html"><span class="identifier">GenericStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-select-query/index.html"><span class="keyword">class </span><span class="identifier">ReusableSelectQuery</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-select-query/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableSelectQuery$run(kotlin.Function1((com.jovial.db9010.SelectQuery, com.jovial.db9010.ReusableSelectQuery.run.T)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-select-query/index.html"><span class="identifier">SelectQuery</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/index.html"><span class="keyword">class </span><span class="identifier">SelectQuery</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-results-holder/index.html"><span class="identifier">ResultsHolder</span></a><span class="symbol">, </span><a href="com.jovial.db9010/-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></a></a><br/>
 <ul>
 <HTML>
@@ -307,6 +349,7 @@
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$<init>(com.jovial.db9010.Database, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$<init>(com.jovial.db9010.Database, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/for-update.html"><span class="keyword">fun </span><span class="identifier">forUpdate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/from.html"><span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$from(kotlin.Array((com.jovial.db9010.Table)))/tables">tables</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/get-reusable.html"><span class="keyword">fun </span><span class="identifier">getReusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="com.jovial.db9010/-reusable-select-query/index.html"><span class="identifier">ReusableSelectQuery</span></a></a></a><br/>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$run(kotlin.Function1((com.jovial.db9010.SelectQuery, com.jovial.db9010.SelectQuery.Builder.run.T)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-select-query/index.html"><span class="identifier">SelectQuery</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
 </BODY>
 </HTML>
@@ -582,6 +625,7 @@
 </HEAD>
 <BODY>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$<init>(com.jovial.db9010.Database, com.jovial.db9010.Table)/table">table</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/get-reusable.html"><span class="keyword">fun </span><span class="identifier">getReusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="com.jovial.db9010/-reusable-delete-statement/index.html"><span class="identifier">ReusableDeleteStatement</span></a></a></a><br/>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-delete-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.DeleteStatement.Builder$run(kotlin.Function1((com.jovial.db9010.DeleteStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-delete-statement/index.html"><span class="identifier">DeleteStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
 </BODY>
 </HTML>
@@ -622,6 +666,7 @@
 </HEAD>
 <BODY>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.GenericStatement.Builder$<init>(com.jovial.db9010.Database)/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/get-reusable.html"><span class="keyword">fun </span><span class="identifier">getReusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="com.jovial.db9010/-reusable-generic-statement/index.html"><span class="identifier">ReusableGenericStatement</span></a></a></a><br/>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-generic-statement/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.GenericStatement.Builder$run(kotlin.Function1((com.jovial.db9010.GenericStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-generic-statement/index.html"><span class="identifier">GenericStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
 </HTML>
@@ -772,6 +817,46 @@
 </BODY>
 </HTML>
 </ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-delete-statement/index.html"><span class="keyword">class </span><span class="identifier">ReusableDeleteStatement</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-delete-statement/-init-.html"><span class="identifier">ReusableDeleteStatement</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableDeleteStatement$<init>(java.sql.PreparedStatement, kotlin.collections.List((com.jovial.db9010.Parameter((kotlin.Any)))))/statement">statement</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ReusableDeleteStatement$<init>(java.sql.PreparedStatement, kotlin.collections.List((com.jovial.db9010.Parameter((kotlin.Any)))))/parameters">parameters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-delete-statement/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableDeleteStatement$run(kotlin.Function1((com.jovial.db9010.DeleteStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-delete-statement/index.html"><span class="identifier">DeleteStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-generic-statement/index.html"><span class="keyword">class </span><span class="identifier">ReusableGenericStatement</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-generic-statement/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableGenericStatement$run(kotlin.Function1((com.jovial.db9010.GenericStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-generic-statement/index.html"><span class="identifier">GenericStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-select-query/index.html"><span class="keyword">class </span><span class="identifier">ReusableSelectQuery</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-reusable-select-query/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableSelectQuery$run(kotlin.Function1((com.jovial.db9010.SelectQuery, com.jovial.db9010.ReusableSelectQuery.run.T)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-select-query/index.html"><span class="identifier">SelectQuery</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/index.html"><span class="keyword">class </span><span class="identifier">SelectQuery</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-results-holder/index.html"><span class="identifier">ResultsHolder</span></a><span class="symbol">, </span><a href="com.jovial.db9010/-parameter-setter/index.html"><span class="identifier">ParameterSetter</span></a></a></a><br/>
 <ul>
 <HTML>
@@ -793,6 +878,7 @@
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/-init-.html"><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$<init>(com.jovial.db9010.Database, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/db">db</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-database/index.html"><span class="identifier">Database</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$<init>(com.jovial.db9010.Database, kotlin.collections.List((com.jovial.db9010.Column((kotlin.Any)))))/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="com.jovial.db9010/-column/index.html"><span class="identifier">Column</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></a></a><br/>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/for-update.html"><span class="keyword">fun </span><span class="identifier">forUpdate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/from.html"><span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$from(kotlin.Array((com.jovial.db9010.Table)))/tables">tables</span><span class="symbol">:</span>&nbsp;<a href="com.jovial.db9010/-table/index.html"><span class="identifier">Table</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Builder</span></a></a><br/>
+<a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/get-reusable.html"><span class="keyword">fun </span><span class="identifier">getReusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="com.jovial.db9010/-reusable-select-query/index.html"><span class="identifier">ReusableSelectQuery</span></a></a></a><br/>
 <a href="../docs/db9010/index"><a href="com.jovial.db9010/-select-query/-builder/run.html"><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.SelectQuery.Builder$run(kotlin.Function1((com.jovial.db9010.SelectQuery, com.jovial.db9010.SelectQuery.Builder.run.T)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="com.jovial.db9010/-select-query/index.html"><span class="identifier">SelectQuery</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></a></a><br/>
 </BODY>
 </HTML>

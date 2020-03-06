@@ -141,6 +141,36 @@ a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">Re
 </tr>
 <tr>
 <td>
+<h4><a href="-reusable-delete-statement/index.html">ReusableDeleteStatement</a></h4>
+</td>
+<td>
+<p>A delete statement that can be stored in a variable, and used multipe times.  This saves the
+(small) overhead of a hash table lookup that's incurred when using <a href="-database/delete-from.html">Database.deleteFrom</a> every
+time the same statement is run.</p>
+<code><span class="keyword">class </span><span class="identifier">ReusableDeleteStatement</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-reusable-generic-statement/index.html">ReusableGenericStatement</a></h4>
+</td>
+<td>
+<p>A generic statement that can be stored in a variable, and used multipe times.  This saves the
+(small) overhead of a hash table lookup that's incurred when using <a href="-database/statement.html">Database.statement</a> every
+time the same statement is run.</p>
+<code><span class="keyword">class </span><span class="identifier">ReusableGenericStatement</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-reusable-select-query/index.html">ReusableSelectQuery</a></h4>
+</td>
+<td>
+<p>A select query that can be stored in a variable, and used multipe times.  This saves the
+(small) overhead of a hash table lookup that's incurred when using <a href="-database/select.html">Database.select</a> every
+time the same statement is run.</p>
+<code><span class="keyword">class </span><span class="identifier">ReusableSelectQuery</span></code></td>
+</tr>
+<tr>
+<td>
 <h4><a href="-select-query/index.html">SelectQuery</a></h4>
 </td>
 <td>

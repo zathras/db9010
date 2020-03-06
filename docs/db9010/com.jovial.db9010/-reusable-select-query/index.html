@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ReusableSelectQuery - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">ReusableSelectQuery</a><br/>
+<br/>
+<h1>ReusableSelectQuery</h1>
+<code><span class="keyword">class </span><span class="identifier">ReusableSelectQuery</span></code>
+<p>A select query that can be stored in a variable, and used multipe times.  This saves the
+(small) overhead of a hash table lookup that's incurred when using <a href="../-database/select.html">Database.select</a> every
+time the same statement is run.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="run.html">run</a></h4>
+</td>
+<td>
+<p>Run the query, in the same was as is done by <a href="../-select-query/-builder/run.html">SelectQuery.Builder.run</a> for non-reusable query objects.</p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableSelectQuery$run(kotlin.Function1((com.jovial.db9010.SelectQuery, com.jovial.db9010.ReusableSelectQuery.run.T)))/body">body</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../-select-query/index.html"><span class="identifier">SelectQuery</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

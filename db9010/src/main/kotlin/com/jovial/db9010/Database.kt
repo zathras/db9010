@@ -267,7 +267,7 @@ class Database private constructor(val connection: Connection) : AutoCloseable {
 
     /**
      * Run a generic SQL statement.  See [GenericStatement.Builder] for setting
-     * arguments and parameters, including the statement text.A
+     * arguments and parameters, including the statement text.
      *
      * Usage example:
      * ```

@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SelectQuery.Builder.getReusable - db9010</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="../index.html">SelectQuery</a>&nbsp;/&nbsp;<a href="index.html">Builder</a>&nbsp;/&nbsp;<a href="./get-reusable.html">getReusable</a><br/>
+<br/>
+<h1>getReusable</h1>
+<a name="com.jovial.db9010.SelectQuery.Builder$getReusable()"></a>
+<code><span class="keyword">fun </span><span class="identifier">getReusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../-reusable-select-query/index.html"><span class="identifier">ReusableSelectQuery</span></a></code>
+<p>Gives a reference to a reusable query object.  This allows clients to avoid the (small)
+lookup overhead for a frequently-used select query.</p>
+<p>Usage:</p>
+<pre><code>val stmt = (db.select(countColumn).from(TestTable) +
+        " WHERE " + TestTable.testName + "=" + stringParam).getReusable()
+&lt;...&gt;
+val count = stmt.run { query -&gt;
+    query[stringParam] = testName
+    query.nextOrFail()
+    query[countColumn]
+}
+</code></pre>
+<p>Throws <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html">IllegalStateException</a> if this statement is not cacheable.</p>
+</BODY>
+</HTML>

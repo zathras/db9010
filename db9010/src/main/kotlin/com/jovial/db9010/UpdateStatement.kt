@@ -4,6 +4,12 @@ import java.sql.PreparedStatement
 
 /**
  * An SQL update statement.  See [Database.update].
+ *
+ * Note that this statement type doesn't have a `getReusable()` method, like
+ * [SelectQuery.Builder.getReusable].  That's because, for an insert statment, the
+ * lambda that identifies the columns also sets their values.  The overhead
+ * of establishing a mapping if those functions were to be separated exceeds the
+ * slight overhead of looking up the statement in the cache.
  */
 class UpdateStatement private constructor(
     table : Table,

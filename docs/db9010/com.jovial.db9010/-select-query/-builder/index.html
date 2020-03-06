@@ -46,6 +46,15 @@ be called exactly once per statement.</p>
 </tr>
 <tr>
 <td>
+<h4><a href="get-reusable.html">getReusable</a></h4>
+</td>
+<td>
+<p>Gives a reference to a reusable query object.  This allows clients to avoid the (small)
+lookup overhead for a frequently-used select query.</p>
+<code><span class="keyword">fun </span><span class="identifier">getReusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../-reusable-select-query/index.html"><span class="identifier">ReusableSelectQuery</span></a></code></td>
+</tr>
+<tr>
+<td>
 <h4><a href="run.html">run</a></h4>
 </td>
 <td>

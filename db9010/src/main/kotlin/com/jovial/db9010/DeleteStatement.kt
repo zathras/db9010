@@ -6,7 +6,7 @@ import java.sql.PreparedStatement
 /**
  * An SQL delete statement.  See [Database.deleteFrom].
  */
-class DeleteStatement private constructor(private val paramSetter : ParameterSetterImpl)
+class DeleteStatement internal constructor(internal val paramSetter : ParameterSetterImpl)
         : ParameterSetter by paramSetter {
 
     /**
@@ -23,7 +23,7 @@ class DeleteStatement private constructor(private val paramSetter : ParameterSet
 
         /**
          * Run [setBody] to set any needed [Parameter] values on the delete statement, then execute
-         * the statment.  See [Database.deleteFrom].
+         * the statement.  See [Database.deleteFrom].
          */
         infix fun run(setBody: (DeleteStatement) -> Unit) : Int {
             val statement = DeleteStatement(ParameterSetterImpl())
@@ -33,6 +33,31 @@ class DeleteStatement private constructor(private val paramSetter : ParameterSet
             return db.deleteStatements.withStatement(this) { stmt ->
                 statement.paramSetter.setParameters(parameters, stmt)
                 stmt.executeUpdate()
+            }
+        }
+
+        /**
+         * Gives a reference to a reusable statement object.  This allows clients to avoid the (small)
+         * lookup overhead for a frequently-used delete statement.
+         *
+         * Usage:
+         * ```
+         * val intParam = Parameter(Types.sqlInt)
+         * val deleteFrom = (db.deleteFrom(TestTable) + " WHERE " + TestTable.id + "=" + intParam).getReusable()
+         * val id = <...>
+         * val deleted = deleteFrom run {
+         *     it[intParam] = id
+         * }
+         * ```
+         * Throws [IllegalStateException] if this statement is not cacheable.
+         */
+        fun getReusable(): ReusableDeleteStatement {
+            if (!doCache) {
+                throw IllegalStateException("Statement is not cacheable")
+            }
+            text = textBuilder.toString()
+            return db.deleteStatements.withStatement(this) { stmt ->
+                ReusableDeleteStatement(stmt, parameters)
             }
         }
 
@@ -50,5 +75,27 @@ class DeleteStatement private constructor(private val paramSetter : ParameterSet
             dbLogger.fine(s)
             return db.connection.prepareStatement(s)
         }
+    }
+}
+
+/**
+ * A delete statement that can be stored in a variable, and used multipe times.  This saves the
+ * (small) overhead of a hash table lookup that's incurred when using [Database.deleteFrom] every
+ * time the same statement is run.
+ */
+class ReusableDeleteStatement(
+    private val statement : PreparedStatement,
+    private val parameters : List<Parameter<*>>
+) {
+    /**
+     * Run [setBody] to set any needed [Parameter] values on the delete statement, then execute
+     * the statement.  See [Database.deleteFrom].
+     */
+    infix fun run(setBody: (DeleteStatement) -> Unit) : Int {
+        val ds = DeleteStatement(ParameterSetterImpl())
+        setBody(ds)
+        ds.paramSetter.checkParameters(parameters)
+        ds.paramSetter.setParameters(parameters, statement)
+        return statement.executeUpdate()
     }
 }

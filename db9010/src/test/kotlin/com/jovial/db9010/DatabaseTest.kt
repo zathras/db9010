@@ -155,6 +155,24 @@ class DatabaseTest {
     }
 
     @Test
+    fun testReusableSelect() {
+        val testName = "testReusableSelect()"
+        withDb { db ->
+            val stmt = (db.select(countColumn).from(TestTable) +
+                " WHERE " + TestTable.testName + "=" + stringParam).getReusable()
+            for (i in 1..10) {
+                val count = stmt.run { query ->
+                    query[stringParam] = testName
+                    query.nextOrFail()
+                    query[countColumn]
+                }
+                assert(count == 0)
+            }
+        }
+
+    }
+
+    @Test
     fun testNoResultsInsert() {
         val testName = "testNoResultsInsert()"
         withDb { db ->
@@ -182,6 +200,23 @@ class DatabaseTest {
             }
             assert(deleted == 1)
             assert(getValue(db, countColumn, id) == 0)
+        }
+    }
+
+    @Test
+    fun deleteFromReusable() {
+        val testName = "deleteFromReusable()"
+        withDb { db ->
+            val deleteFrom = (db.deleteFrom(TestTable) + " WHERE " + TestTable.id + "=" + intParam).getReusable()
+            for (i in 1..10) {
+                val id = insertRow(db, testName)
+                assert(getValue(db, countColumn, id) == 1)
+                val deleted = deleteFrom run {
+                    it[intParam] = id
+                }
+                assert(deleted == 1)
+                assert(getValue(db, countColumn, id) == 0)
+            }
         }
     }
 
@@ -217,6 +252,31 @@ class DatabaseTest {
                     r = rs.getString(1)
                     found = rs.next()
                     assert(!found)
+                }
+            }
+            r
+        }
+        assert(result == "Setup Row")
+    }
+
+    @Test
+    fun reusableStatement() {
+        val result = withDb { db ->
+            var r = ""
+            val stmt = (db.statement() + "SELECT " + TestTable.testName + " FROM " + TestTable +
+                    " WHERE " + TestTable.id + "=" + intParam).getReusable()
+            for (i in 1..10) {
+                stmt run { generic ->
+                    generic[intParam] = testRow
+                    generic.resultHandler = { execOK, stmt ->
+                        assert(execOK)
+                        val rs = stmt.resultSet
+                        var found: Boolean = rs.next()
+                        assert(found)
+                        r = rs.getString(1)
+                        found = rs.next()
+                        assert(!found)
+                    }
                 }
             }
             r

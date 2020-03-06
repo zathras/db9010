@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ReusableDeleteStatement.<init> - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="index.html">ReusableDeleteStatement</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="com.jovial.db9010.ReusableDeleteStatement$&lt;init&gt;(java.sql.PreparedStatement, kotlin.collections.List((com.jovial.db9010.Parameter((kotlin.Any)))))"></a>
+<code><span class="identifier">ReusableDeleteStatement</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableDeleteStatement$<init>(java.sql.PreparedStatement, kotlin.collections.List((com.jovial.db9010.Parameter((kotlin.Any)))))/statement">statement</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html"><span class="identifier">PreparedStatement</span></a><span class="symbol">, </span><span class="identifier" id="com.jovial.db9010.ReusableDeleteStatement$<init>(java.sql.PreparedStatement, kotlin.collections.List((com.jovial.db9010.Parameter((kotlin.Any)))))/parameters">parameters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-parameter/index.html"><span class="identifier">Parameter</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p>A delete statement that can be stored in a variable, and used multipe times.  This saves the
+(small) overhead of a hash table lookup that's incurred when using <a href="../-database/delete-from.html">Database.deleteFrom</a> every
+time the same statement is run.</p>
+</BODY>
+</HTML>

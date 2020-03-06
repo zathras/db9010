@@ -65,6 +65,24 @@ This class maintains a map that is used to look up a desired <a href="../com.jov
 a <a href="https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html">ResultSet</a>.</p>
 </tr>
 <tr>
+<h5><a href="../com.jovial.db9010/-reusable-delete-statement/index.html">com.jovial.db9010.ReusableDeleteStatement</a></h5>
+<p>A delete statement that can be stored in a variable, and used multipe times.  This saves the
+(small) overhead of a hash table lookup that's incurred when using <a href="../com.jovial.db9010/-database/delete-from.html">Database.deleteFrom</a> every
+time the same statement is run.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-reusable-generic-statement/index.html">com.jovial.db9010.ReusableGenericStatement</a></h5>
+<p>A generic statement that can be stored in a variable, and used multipe times.  This saves the
+(small) overhead of a hash table lookup that's incurred when using <a href="../com.jovial.db9010/-database/statement.html">Database.statement</a> every
+time the same statement is run.</p>
+</tr>
+<tr>
+<h5><a href="../com.jovial.db9010/-reusable-select-query/index.html">com.jovial.db9010.ReusableSelectQuery</a></h5>
+<p>A select query that can be stored in a variable, and used multipe times.  This saves the
+(small) overhead of a hash table lookup that's incurred when using <a href="../com.jovial.db9010/-database/select.html">Database.select</a> every
+time the same statement is run.</p>
+</tr>
+<tr>
 <h5><a href="../com.jovial.db9010/-select-query/index.html">com.jovial.db9010.SelectQuery</a></h5>
 <p>An SQL select query.  See <a href="../com.jovial.db9010/-database/select.html">Database.select</a>.</p>
 </tr>

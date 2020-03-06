@@ -10,6 +10,11 @@
 <h1>InsertStatement</h1>
 <code><span class="keyword">class </span><span class="identifier">InsertStatement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-column-setter/index.html"><span class="identifier">ColumnSetter</span></a></code>
 <p>An SQL insert statement.  See <a href="../-database/insert-into.html">Database.insertInto</a>.</p>
+<p>Note that this statement type doesn't have a <code>getReusable()</code> method, like
+<a href="../-select-query/-builder/get-reusable.html">SelectQuery.Builder.getReusable</a>.  That's because, for an insert statment, the
+lambda that identifies the columns also sets their values.  The overhead
+of establishing a mapping if those functions were to be separated exceeds the
+slight overhead of looking up the statement in the cache.</p>
 <h3>Types</h3>
 <table>
 <tbody>

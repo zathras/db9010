@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ReusableGenericStatement - db9010</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="./index.html">ReusableGenericStatement</a><br/>
+<br/>
+<h1>ReusableGenericStatement</h1>
+<code><span class="keyword">class </span><span class="identifier">ReusableGenericStatement</span></code>
+<p>A generic statement that can be stored in a variable, and used multipe times.  This saves the
+(small) overhead of a hash table lookup that's incurred when using <a href="../-database/statement.html">Database.statement</a> every
+time the same statement is run.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="run.html">run</a></h4>
+</td>
+<td>
+<p>Call <a href="run.html#com.jovial.db9010.ReusableGenericStatement$run(kotlin.Function1((com.jovial.db9010.GenericStatement, kotlin.Unit)))/setBody">setBody</a> to set any statement <a href="../-parameter/index.html">Parameter</a> values, then call
+<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#execute()">PreparedStatement.execute</a> to run the SQL statement.  If <a href="run.html#com.jovial.db9010.ReusableGenericStatement$run(kotlin.Function1((com.jovial.db9010.GenericStatement, kotlin.Unit)))/setBody">setBody</a> sets
+a value for <a href="../-generic-statement/result-handler.html">GenericStatement.resultHandler</a>, call that with the result of
+<a href="https://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#execute()">PreparedStatement.execute</a>.</p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="identifier" id="com.jovial.db9010.ReusableGenericStatement$run(kotlin.Function1((com.jovial.db9010.GenericStatement, kotlin.Unit)))/setBody">setBody</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../-generic-statement/index.html"><span class="identifier">GenericStatement</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

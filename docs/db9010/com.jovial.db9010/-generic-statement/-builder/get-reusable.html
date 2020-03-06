@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GenericStatement.Builder.getReusable - db9010</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">db9010</a>&nbsp;/&nbsp;<a href="../../index.html">com.jovial.db9010</a>&nbsp;/&nbsp;<a href="../index.html">GenericStatement</a>&nbsp;/&nbsp;<a href="index.html">Builder</a>&nbsp;/&nbsp;<a href="./get-reusable.html">getReusable</a><br/>
+<br/>
+<h1>getReusable</h1>
+<a name="com.jovial.db9010.GenericStatement.Builder$getReusable()"></a>
+<code><span class="keyword">fun </span><span class="identifier">getReusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../-reusable-generic-statement/index.html"><span class="identifier">ReusableGenericStatement</span></a></code>
+<p>Gives a reference to a reusable statement object.  This allows clients to avoid the (small)
+lookup overhead for a frequently-used statement.</p>
+<p>Usage:</p>
+<pre><code>val intParam = Parameter(Types.sqlInt)
+var r = ""
+val stmt = (db.statement() + "SELECT " + TestTable.testName + " FROM " + TestTable +
+               " WHERE " + TestTable.id + "=" + intParam).getReusable()
+stmt run { generic -&gt;
+    generic[intParam] = testRow
+    generic.resultHandler = { execOK, stmt -&gt;
+        assert(execOK)
+        val found = rs.next()
+        assert(found)
+        val rs = stmt.resultSet
+        r = rs.getString(1)
+    }
+}
+</code></pre>
+<p>Throws <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html">IllegalStateException</a> if this statement is not cacheable.</p>
+</BODY>
+</HTML>

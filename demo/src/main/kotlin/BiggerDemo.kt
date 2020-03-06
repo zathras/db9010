@@ -256,7 +256,8 @@ fun biggerDemo() {
             }
         }()
 
-        db.select(Users.columns).from(Users) run { r ->
+        val getColumns = db.select(Users.columns).from(Users).getReusable()
+        getColumns run { r ->
             while (r.next()) {
                 println("${r.getJson()}")
             }

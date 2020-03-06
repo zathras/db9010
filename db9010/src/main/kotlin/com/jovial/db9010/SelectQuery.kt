@@ -78,6 +78,35 @@ class SelectQuery private constructor(
             }
         }
 
+        /**
+         * Gives a reference to a reusable query object.  This allows clients to avoid the (small)
+         * lookup overhead for a frequently-used select query.
+         *
+         * Usage:
+         * ```
+         * val stmt = (db.select(countColumn).from(TestTable) +
+         *         " WHERE " + TestTable.testName + "=" + stringParam).getReusable()
+         * <...>
+         * val count = stmt.run { query ->
+         *     query[stringParam] = testName
+         *     query.nextOrFail()
+         *     query[countColumn]
+         * }
+         * ```
+         * Throws [IllegalStateException] if this statement is not cacheable.
+         */
+        fun getReusable() : ReusableSelectQuery {
+            if (!doCache) {
+                throw IllegalStateException("Statement is not cacheable")
+            }
+            text = textBuilder.toString()
+            val query : SelectQuery = db.selectStatements.withStatement(this) { stmt ->
+                val columnIndex = columns.indices.associateBy({ i -> columns[i] }, { i -> i+1 })
+                SelectQuery(columns, parameters, columnIndex, stmt, forUpdate, ParameterSetterImpl())
+            }
+            return ReusableSelectQuery(query)
+        }
+
         override val statementKey: Key get() = Key(columns, tablesNotNull, forUpdate, text)
 
         override fun prepareStatement(): PreparedStatement {
@@ -242,4 +271,27 @@ class SelectQuery private constructor(
         setFromJson(jsonValue)
         resultOrExecute.insertRow()
     }
+
+    internal fun <T> runReusable(body: (SelectQuery) -> T) : T {
+        val clone = SelectQuery(columns, parameters, columnIndex, statement, forUpdate, ParameterSetterImpl())
+        try {
+            return body(clone)
+        } finally {
+            clone.close()
+        }
+    }
+}
+
+/**
+ * A select query that can be stored in a variable, and used multipe times.  This saves the
+ * (small) overhead of a hash table lookup that's incurred when using [Database.select] every
+ * time the same statement is run.
+ */
+class ReusableSelectQuery internal constructor(private val query : SelectQuery) {
+
+    /**
+     * Run the query, in the same was as is done by [SelectQuery.Builder.run] for non-reusable query objects.
+     */
+    infix fun <T> run(body: (SelectQuery) -> T): T =
+        query.runReusable(body)
 }
